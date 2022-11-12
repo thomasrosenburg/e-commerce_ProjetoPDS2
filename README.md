@@ -4,18 +4,43 @@ E-commerce de roupas
 
 User Stories:
 
-Visualização dos produtos contidos na loja, com suas especificações: tipo de peça, nome do modelo, tamanho e cor. 
+ Eu como cliente gostaria de visualizar os produtos na loja com suas devidas especificações para facilitar a compra.
+ 
+ -ao clicar no produto o cliente terá acesso a uma descrição com todas as informações
+ 
 
-Ordenar os produtos da loja do menor para o maior preço e do maior para o menor preço. 
+Eu como lojista gostaria de ordenar os produtos de acordo com seus preços, do menor para o maior, para facilitar a visualização e organização.
 
-Separar as peças de roupa de acordo com o tipo de peça. 
 
-Permitir que o consumidor adicione as peças que deseja comprar no carrinho de acordo com a disponibilidade do estoque. 
 
-Permitir que os funcionários da loja retirem e adicionem produtos ao site. 
 
-Fazer um cadastro para o cliente, para que ele adicione suas informações, como nome e endereço 
+Eu como lojista gostaria de Separar as peças de roupa de acordo com o tipo de peça para facilitar a organização.
 
-Durante a finalização do pedido, apresentar ao cliente o preço do frete e o tempo de entrega, que estarão de acordo com a localidade informada pelo cliente no cadastro. 
 
-Apresentar ao cliente duas formas de pagamento: transferência bancária ou cartão.
+
+
+Eu como cliente gostaria de adicionar as peças desejadas no carrinho de compras se estiverem disponíveis no estoque.
+
+-Botão adicionar ao carrinho
+
+
+Eu como lojista gostaria de adicionar e retirar itens da loja
+
+
+
+
+Eu como cliente gostaria de poder fazer meu cadastro para fornecer minhas informações ao site
+
+
+
+
+Eu como cliente gostaria de, ao finalizar a compra, saber o preço do frete e o tempo de entrega 
+
+
+
+
+Eu como cliente gostaria de poder pagar tanto no boleto bancário quanto no cartão de crédito, para ter mais opções de forma de pagamento
+
+-Presença de uma caixinha de escolha de forma de pagamento 
+
+
