@@ -1,4 +1,4 @@
-ntegrantes:
+
 Integrantes:
 Alice Lacerda Cunha, Guilherme Bacha Vaz D'Oliveira, Joseane Fernandes Miranda, Thomas Costa Rosenburg Alvares.
 
