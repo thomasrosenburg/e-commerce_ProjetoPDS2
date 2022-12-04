@@ -2,7 +2,7 @@
 #include <iostream>
 
 /* @brief função responsável por adicionar os produtos que o cliente deseja*/
-void Pedido::adicionar_carrinho(Produto p, unsigned int quant)
+void Pedido::adicionar_produto(Produto p, unsigned int quant)
 {
 
     if(quant<=p.get_quantidade())
@@ -17,7 +17,7 @@ void Pedido::adicionar_carrinho(Produto p, unsigned int quant)
 
 }
 
-/*olhar como resolver isso aqui*/
+
 void Pedido::adicionar_cliente( Cliente cliente)
 { 
     _cliente.set_nome(cliente.get_nome());
@@ -31,10 +31,13 @@ void Pedido::imprimir_carrinho()
 {
     std::cout<<"Cliente:"<<std::endl;
     /*imprimir cliente*/
+    _cliente.imprime_cliente();
 
     std::cout<<"Pedido:"<<std::endl;
     /*imprimir pedido*/
-}
+}   for(auto it= _produtos_pedidos.begin(); it!= _produtos_pedidos.end(); it++)
+{
+    std::cout<<(*it).second<< (*it).first.imprimir_produto()<<std::endl;
 
 std::string  Pedido::calcular_frete()
 {
