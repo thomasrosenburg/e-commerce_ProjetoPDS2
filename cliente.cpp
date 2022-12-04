@@ -53,7 +53,12 @@ void Cliente::imprime_cliente()
     <<std::endl;
 
     //imprimir endereco
-
+    std:: cout<< "ENDEREÇO"<<std::endl
+        <<"ESTADO :"<<_endereco.get_estado()<< std::endl
+        <<"CIDADE :"<< _endereco.get_cidade()<< std::endl
+        <<"CEP :"<<_endereco.get_CEP()<<std::endl
+        <<"NÚMERO :"<<_endereco.get_numero()<<std::endl
+        <<"COMPLEMENTO :"<<_endereco.get_complemento()<<std::endl;
 
     
 }
