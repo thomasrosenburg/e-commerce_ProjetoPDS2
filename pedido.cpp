@@ -60,7 +60,7 @@ std::string  Pedido::calcular_frete()
 
         return "Endereço não disponível para entrega\n";
 }
-/*olhar o que esta dando errado nessa função*/
+
 
 double Pedido::calcular_total()
 {
@@ -68,7 +68,7 @@ double Pedido::calcular_total()
     
     for(auto it=this->_produtos_pedidos.begin(); it!=this->_produtos_pedidos.end(); it++)
     {
-        /*olhar como acessar primeiro elemento*/
+        
         total=total+(*it).first._preco;
         
     }
