@@ -19,7 +19,7 @@ enum Estado
 class Endereco{
     //declara as informações privadas do endereço.
     private:
-    unsigned int _CEP;
+    std::string _CEP;
     std::string _cidade;
     Estado _estado;
     unsigned int _numero;
@@ -27,13 +27,13 @@ class Endereco{
     //declara os métodos relacionados ao endereço.
     public:
     //constrói um endereço.
-    Endereco(unsigned int CEP,
+    Endereco(std::string CEP,
     std::string cidade,
     Estado estado,
     unsigned int numero,
     unsigned int complemento);
     // acessa a variável CEP do endereço.
-    unsigned int get_CEP(); 
+    std::string get_CEP(); 
     //acessa a variável cidade do endereço.
     std::string get_cidade();
     //determina o estado que o endereço se encontra.
