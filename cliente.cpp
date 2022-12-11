@@ -6,8 +6,8 @@ Cliente::Cliente(
     std::string nome,
     std:: string login,
     std:: string email,
-     unsigned int celular, 
-    unsigned int CEP,
+    std::string celular, 
+    std::string CEP,
     std::string cidade,
     Estado estado,
     unsigned int numero,
@@ -20,7 +20,7 @@ Cliente::Cliente(
 
     };
 
-unsigned int Cliente::get_celular()
+std::string Cliente::get_celular()
 {
     return _celular;
 };
@@ -63,7 +63,7 @@ void Cliente::imprime_cliente()
     
 }
 
-void Cliente:: set_celular(unsigned int cel)
+void Cliente:: set_celular(std::string cel)
 {
     _celular=cel;
 }
