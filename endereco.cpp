@@ -1,6 +1,6 @@
 #include "endereco.h"
 
-Endereco::Endereco(unsigned int CEP,
+Endereco::Endereco(std::string CEP,
     std::string cidade,
     Estado estado,
     unsigned int numero,
@@ -9,11 +9,11 @@ Endereco::Endereco(unsigned int CEP,
         _CEP=CEP;
         _cidade=cidade;
         _estado=estado;
-        numero=numero;
+        _numero=numero;
         _complemento=complemento;
     };
 
-unsigned int Endereco::get_CEP()
+std::string Endereco::get_CEP()
 {
     return _CEP;
 };
