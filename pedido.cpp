@@ -2,42 +2,44 @@
 #include <iostream>
 
 /* @brief função responsável por adicionar os produtos que o cliente deseja*/
+//TA COM ERRO
 void Pedido::adicionar_produto(Produto p, unsigned int quant)
 {
 
     if(quant<=p.get_quantidade())
     {
-        _produtos_pedidos.insert(std::make_pair(p, quant));
+       // _produtos_pedidos.insert({p,quant});
 
     }
     else 
     {
         std::cout<< "A quantidade selecionada para esse produto está indisponível."<<std:: endl;
-    }
+    } 
 
-}
-
+} 
 
 void Pedido::adicionar_cliente( Cliente cliente)
 { 
-    _cliente.set_nome(cliente.get_nome());
-    _cliente.set_celular(cliente.get_celular());
-    _cliente.set_login(cliente.get_login());
-    _cliente.set_email(cliente.get_email());
-    _cliente.set_endereco(cliente.get_endereco());
-}
-
+    cliente.set_nome(cliente.get_nome());
+    cliente.set_celular(cliente.get_celular());
+    cliente.set_login(cliente.get_login());
+    cliente.set_email(cliente.get_email());
+    cliente.set_endereco(cliente.get_endereco());
+} 
+//TA COM ERRO
 void Pedido::imprimir_carrinho()
 {
     std::cout<<"Cliente:"<<std::endl;
-    /*imprimir cliente*/
+    //imprimir cliente
     _cliente.imprime_cliente();
 
     std::cout<<"Pedido:"<<std::endl;
-    /*imprimir pedido*/
-}   for(auto it= _produtos_pedidos.begin(); it!= _produtos_pedidos.end(); it++)
+    //imprimir pedido
+   for(auto it= _produtos_pedidos.begin(); it!= _produtos_pedidos.end(); it++)
 {
-    std::cout<<(*it).second<< (*it).first.imprimir_produto()<<std::endl;
+    //std::cout<<(*it).second<< (*it).first.imprimir_produto()<<std::endl;
+} 
+} 
 
 std::string  Pedido::calcular_frete()
 {
@@ -61,7 +63,6 @@ std::string  Pedido::calcular_frete()
         return "Endereço não disponível para entrega\n";
 }
 
-
 double Pedido::calcular_total()
 {
     double total=0;
@@ -72,7 +73,7 @@ double Pedido::calcular_total()
         total=total+(*it).first._preco;
         
     }
-
+    return total;
 }
 
 std::string Pedido:: selecionar_pagamento(Pagamento forma_selecionada)
@@ -99,4 +100,4 @@ std::string Pedido:: selecionar_pagamento(Pagamento forma_selecionada)
     }
 
     return "Forma de pagamento selecionada indisponível\n";
-}
+} 
