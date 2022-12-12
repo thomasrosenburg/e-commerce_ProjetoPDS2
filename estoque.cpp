@@ -1,6 +1,6 @@
 #include "estoque.h"
 #include <string.h>
-
+// TA OK
 void Estoque::adiciona_produto(Produto prod_novo)
 {
     unsigned int chave= prod_novo.get_codigo();
@@ -19,20 +19,21 @@ void Estoque::adiciona_produto(Produto prod_novo)
         lista_produtos.emplace_back(prod_novo);
     }
 
-}
+} 
+// TA COM PROBLEMA
 
-void Estoque::retira_produto(Produto prod)
+ void Estoque::retira_produto(Produto prod)
 {
-    unsigned int chave= prod.get_codigo();
+     unsigned int chave= prod.get_codigo();
     for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
     {
-        if((*it).get_codigo()==chave)
+        if(it->get_codigo()==chave)
     { 
-        lista_produtos.remove(*it);
+      // lista_produtos.remove((*it));
     }
-    }
-}
-
+    } 
+} 
+// TA OK
 void Estoque::imprimir_todos()
 {
     for (auto it = lista_produtos.begin(); it != lista_produtos.end(); it++)
@@ -40,19 +41,22 @@ void Estoque::imprimir_todos()
         (*it).imprimir_produto();
     }
 }
+// TA OK
 bool comparacao(Produto prod1, Produto prod2)
 {
     return(prod1._preco<prod2._preco);
 }
+// TA COM PROBLEMA
+
 void Estoque::ordena_preco()
 {
 
-    lista_produtos.sort(comparacao);
+    //lista_produtos.sort();
 
-    imprimir_todos();
+   // lista_produtos.imprimir_todos();
 
-};
-
+} 
+//TA OK
 void Estoque::exibir_blusa()
 {
     /*sabendo que a loja é composta apenas por blusa, calça, vestido, shorts, sapato, vamos classificar*/
@@ -65,7 +69,7 @@ void Estoque::exibir_blusa()
             (*it).imprimir_produto();
         }
     }
-}
+} 
 void Estoque::exibir_calca()    
 { 
     for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
@@ -106,5 +110,4 @@ if((*it).get_tipo()==4)
             (*it).imprimir_produto();
         }
 }
-}
-
+} 
