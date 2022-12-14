@@ -5,7 +5,7 @@
 //tipos de produtos presentes no site.
 enum Tipo
 {
-    blusa, 
+    blusa=1, 
     calca, 
     sapato,
     shorts,
