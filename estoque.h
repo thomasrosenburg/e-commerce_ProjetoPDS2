@@ -10,6 +10,7 @@ class Estoque
     //lista de produtos que compõem o estoque da loja.
     std::list<Produto> lista_produtos;
     //essa função deverá ordenar e imprimir na tela os produtos do estoque na ordem crescente de preço.
+    public:
     void ordena_preco(); 
     //adiciona um novo produto ao estoque.
     void adiciona_produto(Produto prod_novo);
