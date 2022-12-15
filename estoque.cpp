@@ -24,14 +24,14 @@ void Estoque::adiciona_produto(Produto prod_novo)
 
  void Estoque::retira_produto(Produto prod)
 {
-     unsigned int chave= prod.get_codigo();
+    unsigned int chave= prod.get_codigo();
     for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
     {
         if(it->get_codigo()==chave)
     { 
-      // lista_produtos.remove((*it));
+        it = lista_produtos.erase((it));
     }
-    } 
+    }
 } 
 // TA OK
 void Estoque::imprimir_todos()
@@ -51,9 +51,15 @@ bool comparacao(Produto prod1, Produto prod2)
 void Estoque::ordena_preco()
 {
 
-    //lista_produtos.sort();
+   lista_produtos.sort([](const Produto &prod1, const Produto &prod2)
+        { 
+                if(prod1._preco==prod2._preco)
+                    { return prod1._preco<prod2._preco;}
+        return prod1._preco<prod2._preco;
+        });
+   
 
-   // lista_produtos.imprimir_todos();
+   imprimir_todos();
 
 } 
 //TA OK
