@@ -18,4 +18,10 @@ bool Banco_Funcionario::encontra_funcionario(std:: string login)
     return false;
 }
 
-
+void Banco_Funcionario:: inicializa_funcionarios()
+{
+    adiciona_funcionario("Alice", "alicel", 20221);
+    adiciona_funcionario("Thomas", "thomasr", 20222);
+    adiciona_funcionario("Joseane", "joseanem",20223);
+    adiciona_funcionario("Guilherme", "guilhermeb", 202204);
+}
