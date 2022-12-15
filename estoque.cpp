@@ -20,7 +20,7 @@ void Estoque::adiciona_produto(Produto prod_novo)
     }
 
 } 
-// TA COM PROBLEMA
+
 
  void Estoque::retira_produto(Produto prod)
 {
@@ -46,7 +46,7 @@ bool comparacao(Produto prod1, Produto prod2)
 {
     return(prod1._preco<prod2._preco);
 }
-// TA COM PROBLEMA
+
 
 void Estoque::ordena_preco()
 {
