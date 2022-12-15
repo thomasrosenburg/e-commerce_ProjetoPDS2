@@ -4,7 +4,7 @@
 #include "estoque.h"
 #include "produto.h"
 #include "usuario.h"
-#include "venda.h"
+#include "banco_funcionario.h"
 
 #include <iostream>
 #include <string.h>
@@ -15,8 +15,13 @@ int main()
     /*variavel auxiliar que recebe a informação se o cliente já tem cadastro*/
     std:: string aux_cadastro;
     int auxiliar_funcao=0;
+    
     Estoque estoque;
-    std::set<std::string> funcionarios={"alicel","thomasr", "joseanem", "guilhermeb"};
+    estoque.inicializa_estoque();
+    
+    Banco_Funcionario banco_funcionario;
+    banco_funcionario.inicializa_funcionarios();
+    
 
     std::cout<<"BEM VINDO AO NOSSO SITE\n";
     std::cout<<"Já possui login no nosso site?\n";
