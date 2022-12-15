@@ -17,6 +17,7 @@ class Banco_Funcionario
     public:
     void adiciona_funcionario(std:: string nome, std:: string login, unsigned int registro);
     bool encontra_funcionario(std::string login); 
+    void inicializa_funcionarios();
 
 
 };
