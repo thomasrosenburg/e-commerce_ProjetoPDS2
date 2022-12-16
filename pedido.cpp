@@ -40,7 +40,7 @@ void Pedido::imprimir_carrinho()
     //imprimir pedido
    for(auto it= _produtos_pedidos.begin(); it!= _produtos_pedidos.end(); it++)
 {
-    //std::cout<<(*it).second<< (*it).first.imprimir_produto()<<std::endl;
+    std::cout<<(*it).imprimir_produto()<<std::endl;
 } 
 } 
 
