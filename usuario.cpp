@@ -16,10 +16,6 @@ std::string Usuario:: get_login()const
 {
     return _login;
 }
-Acesso Usuario:: acesso_site() const
-{
-    return Acesso::SEM_ACESSO;
-}
 void Usuario::set_nome(std::string nome)
 {
     _nome=nome;
