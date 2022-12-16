@@ -12,7 +12,7 @@ class Cliente:public Usuario
     std::string _email;
     Endereco _endereco; 
     std::string _celular;
-    //declara os métodos que o cliente pode executar.
+    //declara os métodos relacionados a classe cliente.
     public:
     //constrói um cliente
     Cliente(std:: string nome, 
@@ -24,6 +24,8 @@ class Cliente:public Usuario
     Estado estado,
     unsigned int numero,
     unsigned int complemento);
+    //determina o acesso do cliente ao site 
+    virtual Acesso acesso_site() override;
     //acessa a variável celular do cliente.
     std::string get_celular();
     //acessa a variável e-mail do cliente.
