@@ -14,5 +14,6 @@ TEST_CASE("Testa produto construtor"){
 TEST_CASE("Testa função alterar quantidade"){
     Produto produto = Produto("Blusa nike", blusa, 1, 89.90, 3, "M", "Preto");
     produto.alterar_quantidade(1);
-    CHECK_EQ(2, produto.get_quantidade());
+    CHECK_EQ(4, produto.get_quantidade());
 }
+
