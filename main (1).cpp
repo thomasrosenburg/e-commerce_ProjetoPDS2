@@ -95,7 +95,7 @@ int main()
                     std::cin>>preco;
                     
 
-                    Produto aux(modelo,codigo, preco, quantidade,tamanho, cor);
+                    Produto aux(modelo,(Tipo) tipo,codigo, preco, quantidade,tamanho, cor);
                     estoque.retira_produto(aux);
 
                 }
@@ -121,7 +121,7 @@ if(aux_cadastro=="NÃO")
         std::string email;
         unsigned int CEP;
         std::string cidade;
-        std::string estado;
+        unsigned int estado;
         unsigned int numero;
         unsigned int complemento; 
         unsigned int celular;
@@ -155,7 +155,7 @@ if(aux_cadastro=="NÃO")
         std::cout<<"Celular:\n";
         std::cout<<celular;
         
-    Cliente novo_cliente(nome,login,email,celular,(Estado)CEP,cidade,estado,numero,complemento);
+    Cliente novo_cliente(nome,login,email,celular,CEP,cidade,(Estado)estado,numero,complemento);
     std::cout<<"Cadastro realizado com sucesso!";
     auxiliar_funcao=1;
     }
