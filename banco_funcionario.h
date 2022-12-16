@@ -4,7 +4,7 @@
 #include "funcionario.h"
 #include <string>
 #include <string.h>
-#include <set>
+#include <list>
 #include <iostream>
 
 
