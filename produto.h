@@ -47,6 +47,10 @@ class Produto
     void alterar_quantidade(unsigned int quant);
     //imprime na tela as informações do produto na tela.
     void imprimir_produto();
+    //converte uma variavel Tipo para uma string.
+    std::string conversao_tipo_string(Tipo tipo);
+    //converte uma variavel String para um Tipo.
+    Tipo conversao_string_tipo(std::string tipo);
 
 
 };
