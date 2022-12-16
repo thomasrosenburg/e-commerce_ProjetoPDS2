@@ -51,7 +51,7 @@ std:: string Produto::get_cor()
 
 void Produto:: alterar_quantidade(unsigned int quant)
 {
-    _quantidade=_quantidade-quant;
+    _quantidade=_quantidade+quant;
 }
 
 void Produto:: imprimir_produto()
