@@ -44,7 +44,7 @@ class Produto
     //acessa a variável cor do produto.
     std:: string get_cor();
     // altera a quantidade do produto presente no estoque.
-    void alterar_quantidade(unsigned int quant);
+    void alterar_quantidade(int quant);
     //imprime na tela as informações do produto na tela.
     void imprimir_produto();
     //converte uma variavel Tipo para uma string.
