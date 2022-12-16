@@ -19,9 +19,9 @@ class Usuario{
         std:: string _login
         );
     //acessa o nome do usuário.
-    std:: string get_nome() const;
+    std:: string get_nome();
     //acessa o login do usuário.
-    std:: string get_login() const;
+    std:: string get_login();
     //determina o tipo de acesso que o usuáiro tem no site.
     virtual Acesso acesso_site()=0;
     //registra um nome para o usuário.
