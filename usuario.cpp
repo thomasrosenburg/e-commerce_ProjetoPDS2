@@ -8,11 +8,11 @@ Usuario::Usuario(std::string nome,
                 {
 
                 };
-std::string Usuario::get_nome() const
+std::string Usuario::get_nome() 
 {
     return _nome;
 };
-std::string Usuario:: get_login()const
+std::string Usuario:: get_login()
 {
     return _login;
 }
