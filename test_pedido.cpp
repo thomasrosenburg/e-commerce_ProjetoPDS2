@@ -7,6 +7,7 @@ TEST_CASE("Testa calcular total"){
     Cliente cliente = Cliente("Joseane", "jm1989", "jm@gmail.com", "31913121989",
                                "31710400", "Belo Horizonte", MG, 21, 113);
     Pedido pedido;
+    pedido.adicionar_cliente(cliente);
     pedido.adicionar_produto(produto1);
     pedido.adicionar_produto(produto2);
     double total = pedido.calcular_total();
