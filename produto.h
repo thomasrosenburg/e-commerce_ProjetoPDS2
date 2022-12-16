@@ -15,7 +15,7 @@ enum Tipo
 
 class Produto
 {
-    //declara as informações privadas de um produto.
+    //declara as características de um produto.
     private:
 
     std::string _modelo;
