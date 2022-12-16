@@ -1,15 +1,18 @@
 #include "pedido.h"
 #include <iostream>
 
-/* @brief função responsável por adicionar os produtos que o cliente deseja*/
-//TA COM ERRO
+/* função responsável por adicionar os produtos que o cliente deseja*/
+
 void Pedido::adicionar_produto(Produto p, unsigned int quant)
 {
 
     if(quant<=p.get_quantidade())
     {
-       // _produtos_pedidos.insert({p,quant});
-
+        p.alterar_quantidade(-1);
+        for(int i=0; i<quant; i++)
+        {
+            _produtos_pedidos.push_back(p);
+        }
     }
     else 
     {
