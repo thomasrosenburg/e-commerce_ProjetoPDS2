@@ -113,6 +113,18 @@ if((*it).get_tipo()==4)
         }
 }
 } 
+
+Produto Estoque:: find_codigo(unsigned int codigo)
+{
+    for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
+    {
+        if((*it).get_codigo()==codigo)
+        {
+            return (*it);
+        }
+    }
+}
+
 void Estoque::inicializa_estoque()
 {
 
