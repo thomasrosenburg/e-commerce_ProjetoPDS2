@@ -3,7 +3,7 @@
 
 #include <string>
 //caracteriza o tipo de usuário, para futuramente filtrar as funções que este pode executar no site.
-enum Acesso{AMPLO, RESTRITO, SEM_ACESSO};
+enum Acesso{AMPLO, RESTRITO};
 
 class Usuario{
     //declara as informações privadas do usuário.
