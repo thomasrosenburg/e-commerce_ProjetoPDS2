@@ -63,3 +63,51 @@ void Produto:: imprimir_produto()
     <<_codigo<<", R$"
     <<_preco;
 }
+std::string Produto:: conversao_tipo_string(Tipo tipo)
+{
+    if(tipo==1)
+    {
+        return "Blusa";
+    
+    }
+    if(tipo==2)
+    {
+        return "Calça";
+    }
+    if(tipo==3)
+    {
+        return "Sapato";
+    }
+    if(tipo==4)
+    {
+        return "Shorts";
+    }
+    if(tipo==5)
+    {
+        return "Vestido";
+    }
+}
+
+Tipo Produto::conversao_string_tipo(std:: string tipo)
+{
+    if(tipo=="Blusa")
+    {
+        return blusa;
+    }
+    if(tipo=="Calça")
+    {
+        return calca;
+    }
+    if(tipo=="Sapato")
+    {
+        return sapato;
+    }
+    if(tipo=="Shorts")
+    {
+        return shorts;
+    }
+    if(tipo=="Vestido")
+    {
+        return vestido;
+    }
+}
