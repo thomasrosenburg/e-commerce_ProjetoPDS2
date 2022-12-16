@@ -12,7 +12,7 @@ class Banco_Funcionario
 {
     private:
 
-    std::set<Funcionario> _banco_funcionarios;
+    std::list<Funcionario> _banco_funcionarios;
     
     public:
     void adiciona_funcionario(std:: string nome, std:: string login, unsigned int registro);
