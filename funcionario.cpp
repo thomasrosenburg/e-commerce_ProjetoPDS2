@@ -14,6 +14,6 @@ unsigned int Funcionario::get_registro()
     return _registro;
 }
 
-Acesso Funcionario::acesso_site() const {
+Acesso Funcionario::acesso_site() {
     return Acesso::AMPLO;
 }
