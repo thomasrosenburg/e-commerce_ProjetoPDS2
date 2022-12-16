@@ -1,5 +1,6 @@
 #include "produto.h"
 #include <iostream>
+#include <iomaip>
 
 
 
@@ -57,10 +58,12 @@ void Produto:: imprimir_produto()
 {
 
     std:: cout<<_modelo<< ", "
-    <<_tipo<<", "
+    <<conversao_tipo_string(_tipo)<<", "
     <<_cor<<", "
     <<_tamanho<<", "
     <<_codigo<<", R$"
+    <<std::fixed
+    <<std::setprecision(2)
     <<_preco;
 }
 std::string Produto:: conversao_tipo_string(Tipo tipo)
