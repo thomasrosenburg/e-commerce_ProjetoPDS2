@@ -34,7 +34,7 @@ Endereco Cliente::get_endereco()
 {
     return _endereco;
 }
-Acesso Cliente::acesso_site() const {
+Acesso Cliente::acesso_site() {
     return Acesso::RESTRITO;
 };
 
