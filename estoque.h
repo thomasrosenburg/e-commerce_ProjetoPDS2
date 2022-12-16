@@ -30,6 +30,8 @@ class Estoque
     void imprimir_todos();
     //compara o preço de dois produtos
     bool comparacao(Produto prod1, Produto prod2);
+    //função criada para encontrar um produto no estoque, pelo seu codigo
+    Produto find_codigo(unsigned int);
     //função criada para simular um banco de dados
     void inicializa_estoque();
 
