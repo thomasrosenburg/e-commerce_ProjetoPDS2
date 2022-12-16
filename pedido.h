@@ -20,6 +20,7 @@ class Pedido
     public:
     Cliente _cliente;
     //adiciona um produto ao carrinho de compras.
+    Pedido();
     void adicionar_produto(Produto p, unsigned int qtd);
     //adiciona o cliente que está comprando.
     void adicionar_cliente( Cliente cliente);
