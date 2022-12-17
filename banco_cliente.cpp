@@ -1,4 +1,5 @@
 #include "banco_cliente.h"
+#include "excecoes.h"
 
 void Banco_Cliente::adiciona_cliente(Cliente cliente)
 {
