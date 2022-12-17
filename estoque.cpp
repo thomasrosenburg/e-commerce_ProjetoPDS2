@@ -116,6 +116,8 @@ if((*it).get_tipo()==4)
 
 Produto Estoque:: find_codigo(unsigned int codigo)
 {
+    if(confere_codigo(codigo)==true)
+{
     for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
     {
         if((*it).get_codigo()==codigo)
@@ -123,7 +125,11 @@ Produto Estoque:: find_codigo(unsigned int codigo)
             return (*it);
         }
     }
+        else
+        { throw excecoes_codigo();
+        }
 }
+    
 bool Estoque:: confere_codigo(unsigned int codigo)
 {
     for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
