@@ -8,7 +8,7 @@ void Pedido::adicionar_produto(Produto p, int quant)
 
     if(quant<=p.get_quantidade())
     {
-        p.alterar_quantidade(-1);
+        p.alterar_quantidade((-1)*quant);
         for(int i=0; i<quant; i++)
         {
             _produtos_pedidos.push_back(p);
