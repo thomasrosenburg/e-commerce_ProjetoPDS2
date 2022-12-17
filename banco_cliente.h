@@ -1,6 +1,7 @@
 #ifndef  BANCO_CLIENTE_H
 #define BANCO_CLIENTE_H
 #include "cliente.h"
+#include "excecoes.h"
 
 #include <string>
 #include <list>
