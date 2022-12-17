@@ -18,6 +18,7 @@ class Banco_Cliente
     void adiciona_cliente(Cliente cliente);
     //caso o cliente esteja registrado no site, ele é retornado
     Cliente retorna_cliente(std::string login);
+    bool confere_login(std::string login);
 
 
 };
