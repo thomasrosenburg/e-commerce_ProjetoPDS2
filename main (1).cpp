@@ -245,8 +245,12 @@ if(aux_cadastro=="NÃO")
             unsigned int quantidade;
             std::cout<<"Digite o codigo do produto que gostaria de adicionar ao carrinho.\n";
             std::cin>>codigo_lido;
+            std::cout<<"Quantos gostaria de adicionar ao carrinho?";
+            std::cin>>quantidade;
 
             Produto p=estoque.retorna_produto(codigo_lido);
+            pedido_cliente.adicionar_carrinho(p,quantidade)
+            
 
 
         }
