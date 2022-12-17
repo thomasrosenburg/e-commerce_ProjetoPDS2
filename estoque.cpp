@@ -124,6 +124,18 @@ Produto Estoque:: find_codigo(unsigned int codigo)
         }
     }
 }
+bool Estoque:: confere_codigo(unsigned int codigo)
+{
+    for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
+    {
+        if((*it).get_codigo()==codigo)
+        {
+            return true;
+        }
+        else
+        return false;
+    }
+}
 
 void Estoque::inicializa_estoque()
 {
