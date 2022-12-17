@@ -1,6 +1,6 @@
 #include "produto.h"
 #include <iostream>
-#include <iomaip>
+#include <iomanip>
 
 
 
@@ -8,7 +8,7 @@ Produto::Produto(std::string modelo,
 Tipo tipo,
 unsigned int codigo,
 double preco, 
-unsigned int quantidade, 
+int quantidade, 
 std::string tamanho, 
 std::string cor):
 _modelo(modelo),
@@ -31,7 +31,7 @@ Tipo Produto::get_tipo()
     return _tipo;
 };
 
-unsigned int Produto::get_quantidade()
+int Produto::get_quantidade()
 {
     return _quantidade;
 };
