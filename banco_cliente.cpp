@@ -18,15 +18,22 @@ bool Banco_cliente::confere_login(std::string login)
 
 Cliente Banco_Cliente::retorna_cliente(std:: string login)
 {
+    if(confere_login(login)==true)
+    {
     for(auto it=_banco_cliente.begin(); it!=_banco_cliente.end(); it++)
     {
         if((*it).get_login()==login)
-        {
+    {
             return (*it);
-        }
     }
-}
-
+    
+    }
+    }
+    else
+    {
+        throw excecoes_login_cliente();
+    }
+    }
 void Banco_Cliente:: Inicializa_Clientes()
 {
     adiciona_cliente(Cliente("Raquel", "raquellacerda", "raquellacerda@gmail.com", "9961-3850", "30140111", "Belo Horizonte", Estado::MG, 799, 1701));
