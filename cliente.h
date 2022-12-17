@@ -41,8 +41,8 @@ class Cliente:public Usuario
     void set_celular(std::string cel);
     //registra um endereco para o cliente no site.
     void set_endereco(Endereco end);
-    //determina o tipo de acesso que o cliente tem no site.
-    virtual Acesso acesso_site() const override;
+  
+  
 
 };
 
