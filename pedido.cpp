@@ -3,7 +3,7 @@
 
 /* função responsável por adicionar os produtos que o cliente deseja*/
 
-void Pedido::adicionar_produto(Produto p, unsigned int quant)
+void Pedido::adicionar_produto(Produto p, int quant)
 {
 
     if(quant<=p.get_quantidade())
@@ -40,7 +40,7 @@ void Pedido::imprimir_carrinho()
     //imprimir pedido
    for(auto it= _produtos_pedidos.begin(); it!= _produtos_pedidos.end(); it++)
 {
-    std::cout<<(*it).imprimir_produto()<<std::endl;
+    (*it).imprimir_produto();
 } 
 } 
 
@@ -73,7 +73,7 @@ double Pedido::calcular_total()
     for(auto it=this->_produtos_pedidos.begin(); it!=this->_produtos_pedidos.end(); it++)
     {
         
-        total=total+(*it).first._preco;
+        total=total+(*it)._preco;
         
     }
     return total;
