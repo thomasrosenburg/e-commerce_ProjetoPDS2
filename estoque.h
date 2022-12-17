@@ -30,7 +30,7 @@ class Estoque
     //imprime na tela todos os produtos presentes no estoque
     void imprimir_todos();
     //função criada para encontrar um produto no estoque, pelo seu codigo
-    Produto find_codigo(unsigned int);
+    Produto find_codigo(unsigned int codigo);
     //função criada para simular um banco de dados
     void inicializa_estoque();
 
