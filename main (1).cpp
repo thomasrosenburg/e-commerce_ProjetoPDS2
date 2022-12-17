@@ -252,15 +252,10 @@ if(aux_cadastro=="NÃO")
             std::cout<<"Quantos gostaria de adicionar ao carrinho?";
             std::cin>>quantidade;
             
-            if(confere_codigo(codigo_lido)==false)
-            {
-                throw excecoes_codigo()
-            }
-            else
-            {
+           
             Produto p=estoque.find_codigo(codigo_lido);
             pedido_cliente.adicionar_carrinho(p,quantidade)
-            }
+            
             
 
 
