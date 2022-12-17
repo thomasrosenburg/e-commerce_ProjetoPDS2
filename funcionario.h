@@ -9,7 +9,7 @@ class Funcionario: public Usuario{
     public:
     Funcionario(std:: string _nome, std:: string login, unsigned int _registro);
     unsigned int get_registro();
-    virtual Acesso acesso_site() const override;
+    virtual Acesso acesso_site() override;
 };
 
 #endif 
