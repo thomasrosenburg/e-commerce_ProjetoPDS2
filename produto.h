@@ -21,7 +21,7 @@ class Produto
     std::string _modelo;
     Tipo _tipo;
     unsigned int _codigo; 
-    unsigned int _quantidade;
+    int _quantidade;
     std::string _tamanho;
     std:: string _cor;
     
@@ -30,7 +30,7 @@ class Produto
     //declara a variável preço do produto.
     double _preco;
     //constrói um produto
-    Produto(std::string modelo,Tipo tipo,unsigned int _codigo, double preco, unsigned int quantidade, std::string tamanho, std::string cor);
+    Produto(std::string modelo,Tipo tipo,unsigned int _codigo, double preco, int quantidade, std::string tamanho, std::string cor);
     //acessa a variável modelo do produto.
     std:: string get_modelo();
     //acessa a variável tipo do produto.
@@ -38,7 +38,7 @@ class Produto
     //acessa a variável codigo do produto.
     unsigned int get_codigo();
     //acessa a variável quantidade do produto.
-    unsigned int get_quantidade();
+    int get_quantidade();
     //acessa a variável tamanho do produto.
     std::string get_tamanho();
     //acessa a variável cor do produto.
@@ -56,4 +56,3 @@ class Produto
 };
 
 #endif
-
