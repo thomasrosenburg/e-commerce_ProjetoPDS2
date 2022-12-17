@@ -108,6 +108,11 @@ int main()
         }       std::cin>>count;
     }
         }
+        //conferindo se o login fornecido é realmente válido
+    if(banco_cliente.confere_login(aux_login)==false)
+    {
+        throw excecoes_login_cliente();
+    }
     /* caso nao estiver no banco de dados significa que é cliente*/
     else
     {
@@ -192,6 +197,9 @@ if(aux_cadastro=="NÃO")
         
  while(std::cin>>operacao_cliente)
  {
+     if(operacao_cliente<1 || operacao_cliente>6)
+            {throw excecoes_operacoes();}
+     
         if(operacao_cliente==1)
         {
             estoque.imprimir_todos();
@@ -212,7 +220,7 @@ if(aux_cadastro=="NÃO")
             std::cout<<"5: Shorts;\n";
 
             std::cin>>auxiliar_categoria;
-
+            //cabe outra exceção aqui
             if(auxiliar_categoria==1)
             {
                 estoque.exibir_blusa();
@@ -247,9 +255,16 @@ if(aux_cadastro=="NÃO")
             std::cin>>codigo_lido;
             std::cout<<"Quantos gostaria de adicionar ao carrinho?";
             std::cin>>quantidade;
-
-            Produto p=estoque.retorna_produto(codigo_lido);
+            
+            if(confere_codigo(codigo_lido)==false)
+            {
+                throw excecoes_codigo()
+            }
+            else
+            {
+            Produto p=estoque.find_codigo(codigo_lido);
             pedido_cliente.adicionar_carrinho(p,quantidade)
+            }
             
 
 
