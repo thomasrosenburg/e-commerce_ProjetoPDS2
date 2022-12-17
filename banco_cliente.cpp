@@ -4,7 +4,17 @@ void Banco_Cliente::adiciona_cliente(Cliente cliente)
 {
     _banco_cliente.push_front(cliente);
 }
-
+bool Banco_cliente::confere_login(std::string login)
+{
+     for(auto it=_banco_cliente.begin(); it!=_banco_cliente.end(); it++)
+    {
+        if((*it).get_login()==login)
+         return true;
+         else
+         return false;
+        
+}
+}
 
 Cliente Banco_Cliente::retorna_cliente(std:: string login)
 {
