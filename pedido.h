@@ -22,7 +22,7 @@ class Pedido
     
     Pedido();
     //adiciona um produto ao carrinho de compras.
-    void adicionar_produto(Produto p, unsigned int qtd);
+    void adicionar_produto(Produto p, int qtd);
     
     //adiciona o cliente que está comprando.
     void adicionar_cliente( Cliente cliente);
