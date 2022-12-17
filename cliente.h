@@ -24,6 +24,7 @@ class Cliente:public Usuario
     Estado estado,
     unsigned int numero,
     unsigned int complemento);
+    Cliente();
     //determina o acesso do cliente ao site 
     virtual Acesso acesso_site() override;
     //acessa a variável celular do cliente.
