@@ -33,6 +33,8 @@ class Estoque
     Produto find_codigo(unsigned int codigo);
     //função criada para simular um banco de dados
     void inicializa_estoque();
+    //funcão criada para conferir se o código dado é válido
+    bool confere_codigo(unsigned int codigo);
 
 
 };
