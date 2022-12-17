@@ -108,11 +108,7 @@ int main()
         }       std::cin>>count;
     }
         }
-        //conferindo se o login fornecido é realmente válido
-    if(banco_cliente.confere_login(aux_login)==false)
-    {
-        throw excecoes_login_cliente();
-    }
+
     /* caso nao estiver no banco de dados significa que é cliente*/
     else
     {
