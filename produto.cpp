@@ -1,4 +1,4 @@
-#include "produto.h"
+#include "../include/produto.h"
 #include <iostream>
 #include <iomanip>
 
@@ -14,10 +14,10 @@ std::string cor):
 _modelo(modelo),
 _tipo(tipo), 
 _codigo(codigo),
-_preco(preco),
 _quantidade(quantidade),
 _tamanho(tamanho), 
-_cor(cor)
+_cor(cor),
+_preco(preco)
 {
 
 };
@@ -61,9 +61,10 @@ void Produto:: imprimir_produto()
     <<conversao_tipo_string(_tipo)<<", "
     <<_cor<<", "
     <<_tamanho<<", "
-    <<_codigo<<", R$"
+    <<_codigo<<", "
     <<std::fixed
     <<std::setprecision(2)
+    <<_quantidade<<" unidades, R$"
     <<_preco;
 }
 std::string Produto:: conversao_tipo_string(Tipo tipo)
@@ -89,6 +90,7 @@ std::string Produto:: conversao_tipo_string(Tipo tipo)
     {
         return "Vestido";
     }
+        return "Erro";//trocar por excecção
 }
 
 Tipo Produto::conversao_string_tipo(std:: string tipo)
@@ -113,4 +115,5 @@ Tipo Produto::conversao_string_tipo(std:: string tipo)
     {
         return vestido;
     }
+        return vestido;//trocar por excecção
 }
