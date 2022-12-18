@@ -14,8 +14,8 @@ Cliente::Cliente(
     unsigned int complemento
     ): Usuario(nome,login),
     _email(email),
-    _celular(celular),
-    _endereco(Endereco(CEP, cidade, estado,numero, complemento))
+    _endereco(Endereco(CEP, cidade, estado,numero, complemento)),
+    _celular(celular)
     {
 
     };
@@ -75,3 +75,11 @@ void Cliente::set_endereco(Endereco end)
 {
     _endereco=end;
 }
+Cliente::Cliente():
+    Usuario("",""),
+    _email(""),
+    _endereco(Endereco("", "", Estado::MG, 0, 0)),
+    _celular("")
+    {
+
+    };
