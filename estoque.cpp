@@ -142,6 +142,18 @@ bool Estoque:: confere_codigo(unsigned int codigo)
             return false;
 }
 
+void Estoque::retira_quant_no_estoque(int quant, Produto p)
+{
+    for(auto it= lista_produtos.begin(); it!=lista_produtos.end(); it++)
+    {
+        if((*it).get_codigo()==p.get_codigo())
+        {
+            (*it).alterar_quantidade((-1)*quant);
+        }
+    }
+}
+
+
 void Estoque::inicializa_estoque()
 {
 
