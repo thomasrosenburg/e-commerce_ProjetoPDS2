@@ -1,4 +1,4 @@
-#include "banco_funcionario.h"
+#include "../include/banco_funcionario.h"
 
 void Banco_Funcionario::adiciona_funcionario(std:: string nome, std:: string login, unsigned int registro)
 {
