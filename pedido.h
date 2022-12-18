@@ -3,6 +3,7 @@
 
 #include "produto.h"
 #include "cliente.h"
+#include "estoque.h"
 
 #include <list>
 //métodos de pagamento.
@@ -22,7 +23,7 @@ class Pedido
     
     Pedido();
     //adiciona um produto ao carrinho de compras.
-    void adicionar_produto(Produto p, int qtd);
+    void adicionar_produto(Produto p, int qtd, Estoque estoque);
     
     //adiciona o cliente que está comprando.
     void adicionar_cliente( Cliente cliente);
