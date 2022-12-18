@@ -1,4 +1,4 @@
-#include "funcionario.h"
+#include "../include/funcionario.h"
 
 Funcionario::Funcionario(
     std::string nome,
