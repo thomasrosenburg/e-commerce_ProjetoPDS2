@@ -1,4 +1,4 @@
-#include "pedido.h"
+#include "../include/pedido.h"
 #include <iostream>
 
 /* função responsável por adicionar os produtos que o cliente deseja*/
@@ -104,3 +104,7 @@ std::string Pedido:: selecionar_pagamento(Pagamento forma_selecionada)
 
     return "Forma de pagamento selecionada indisponível\n";
 } 
+
+Pedido::Pedido(){
+    
+}
