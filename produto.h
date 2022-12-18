@@ -1,6 +1,7 @@
 #ifndef PRODUTO_H
 #define PRODUTO_H
 
+#include "excecoes.h"
 #include <string>
 //tipos de produtos presentes no site.
 enum Tipo
