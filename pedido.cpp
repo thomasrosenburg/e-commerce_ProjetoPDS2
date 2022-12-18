@@ -3,12 +3,12 @@
 
 /* função responsável por adicionar os produtos que o cliente deseja*/
 
-void Pedido::adicionar_produto(Produto p, int quant)
+void Pedido::adicionar_produto(Produto p, int quant, Estoque estoque)
 {
 
     if(quant<=p.get_quantidade())
     {
-        p.alterar_quantidade((-1)*quant);
+        estoque.altera_quant_no_estoque(quant,p);
         for(int i=0; i<quant; i++)
         {
             _produtos_pedidos.push_back(p);
