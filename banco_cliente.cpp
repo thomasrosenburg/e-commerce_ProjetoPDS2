@@ -1,5 +1,4 @@
-#include "banco_cliente.h"
-#include "excecoes.h"
+#include "../include/banco_cliente.h"
 
 void Banco_Cliente::adiciona_cliente(Cliente cliente)
 {
@@ -11,10 +10,8 @@ bool Banco_Cliente::confere_login(std::string login)
     {
         if((*it).get_login()==login)
          return true;
-         else
+    }
          return false;
-        
-}
 }
 
 Cliente Banco_Cliente::retorna_cliente(std:: string login)
@@ -30,10 +27,8 @@ Cliente Banco_Cliente::retorna_cliente(std:: string login)
     
     }
     }
-    else
-    {
         throw excecoes_login_cliente();
-    }
+     
     }
 void Banco_Cliente:: Inicializa_Clientes()
 {
