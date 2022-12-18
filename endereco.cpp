@@ -1,4 +1,4 @@
-#include "endereco.h"
+#include "../include/endereco.h"
 
 Endereco::Endereco(std::string CEP,
     std::string cidade,
