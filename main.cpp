@@ -1,20 +1,20 @@
-#include "pedido.h"
-#include "cliente.h"
-#include "endereco.h"
-#include "estoque.h"
-#include "produto.h"
-#include "usuario.h"
-#include "banco_funcionario.h"
-#include "banco_cliente.h"
+#include "../include/pedido.h"
+#include "../include/cliente.h"
+#include "../include/endereco.h"
+#include "../include/estoque.h"
+#include "../include/produto.h"
+#include "../include/usuario.h"
+#include "../include/banco_funcionario.h"
+#include "../include/banco_cliente.h"
 
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <set>
 
 int main()
 {
     /*variavel auxiliar que recebe a informação se o cliente já tem cadastro*/
-    Cliente usuario_site;
+    Cliente usuario_site = Cliente();
     std:: string aux_cadastro;
     int auxiliar_funcao=0;
     
@@ -47,32 +47,35 @@ int main()
             unsigned int codigo; 
             unsigned int quantidade;
             std::string tamanho;
-            std:: string cor;
+            std::string cor;
             unsigned int preco;
             int count=1;
-    while(count ==1)
+    while(count)
     {
-            std::cout<<"Qual operação deseja realizar?\n";
-            std::string command;
-            std::cin>>command;
-            {
+                std::string command;
+                std::cout<<"Qual operação deseja realizar?\n";
+                std::cout<<"insert: Adicionar ao estoque\ndelete: Retirar produto do estoque\n";
+                std::cin >> command;
                 if (command == "insert")
                 {
                     std::cout<<"Digite as informações do produto que deseja adicionar\n";
-                    std:: cout<<"Nome do modelo:\n";
-                    std::cin>>modelo;
-                    std:: cout<<"Tipo:\n";
-                    std::cin>>tipo;
-                    std:: cout<<"Nome do codigo:\n";
-                    std:: cin>> codigo;
-                    std:: cout<<"Quantidade do produto:\n";
-                    std::cin>>quantidade;
+                    std::cout<<"Nome do modelo:\n";
+                    getchar();
+                    std::getline (std::cin,modelo);          
+                    std::cout<<"Tipo:\n";
+                    std::cin>>tipo;                
+                    std::cout<<"Nome do codigo:\n";
+                    std::cin>> codigo;               
+                    std::cout<<"Quantidade do produto:\n";
+                    std::cin>>quantidade;                 
                     std::cout<<"Tamanho do produto:\n";
-                    std::cin>>tamanho;
+                    std::cin>>tamanho;                  
                     std::cout<<"Cor do produto:\n";
-                    std::cin>>cor;
+                    getchar();
+                    std::getline (std::cin,cor);                     
                     std::cout<<"Preco do produto: \n";
                     std::cin>>preco;
+                    
 
                     
 
@@ -84,18 +87,20 @@ int main()
                 if(command == "delete")
                 {
                     std::cout<<"Digite as informações do produto que deseja retirar\n";
-                    std:: cout<<"Nome do modelo:\n";
-                    std::cin>>modelo;
-                    std:: cout<<"Tipo:\n";
+                    std::cout<<"Nome do modelo:\n";
+                    getchar();
+                    std::getline (std::cin,modelo); 
+                    std::cout<<"Tipo:\n";
                     std::cin>>tipo;
-                    std:: cout<<"Nome do codigo:\n";
+                    std::cout<<"Nome do codigo:\n";
                     std:: cin>> codigo;
-                    std:: cout<<"Quantidade do produto:\n";
+                    std::cout<<"Quantidade do produto:\n";
                     std::cin>>quantidade;
                     std::cout<<"Tamanho do produto:\n";
                     std::cin>>tamanho;
                     std::cout<<"Cor do produto:\n";
-                    std::cin>>cor;
+                    getchar();
+                    std::getline (std::cin,cor); 
                     std::cout<<"Preco do produto: \n";
                     std::cin>>preco;
                     
@@ -105,18 +110,18 @@ int main()
 
                 }
                 std::cout<<"Deseja executar mais alguma ação? Se sim, tecle 1, caso contrário tecle 0"<<std::endl;
-        }       std::cin>>count;
+                std::cin>>count;
     }
         }
 
     /* caso nao estiver no banco de dados significa que é cliente*/
-    else
+    if((banco_funcionario.encontra_funcionario(aux_login)==false))
     {
         usuario_site=banco_cliente.retorna_cliente(aux_login);
         auxiliar_funcao=1;
     }
 }
-if(aux_cadastro=="NÃO")
+if(aux_cadastro=="NAO")
 {
     std:: string resposta_cadastro;
     std::cout<<"Deseja se cadastrar no nosso site?\n";
@@ -148,7 +153,8 @@ if(aux_cadastro=="NÃO")
         std::cin>>CEP;
 
         std::cout<<"Cidade:\n";
-        std::cin>>cidade;
+        getchar();
+        std::getline (std::cin,cidade);  
 
         std::cout<<"Estado:\n";
         std::cin>>estado;
@@ -165,7 +171,7 @@ if(aux_cadastro=="NÃO")
     banco_cliente.adiciona_cliente(Cliente(nome,login,email,celular,CEP,cidade,(Estado)estado,numero,complemento));
     usuario_site=Cliente(nome,login,email,celular,CEP,cidade,(Estado)estado,numero,complemento);
 
-    std::cout<<"Cadastro realizado com sucesso!";
+    std::cout<<"Cadastro realizado com sucesso!\n";
     auxiliar_funcao=1;
     }
 
@@ -174,14 +180,17 @@ if(aux_cadastro=="NÃO")
         std::cout<<"Muito obrigada por visitar nosso site!\n";
         return 0;
     }
-
+}
     if(auxiliar_funcao==1)
     {
         Pedido pedido_cliente;
         pedido_cliente.adicionar_cliente(usuario_site);
         int operacao_cliente;
         
-    
+        int count = 1;
+        
+ while(count)
+ {
         std::cout<<"Qual operação que gostaria de realizar?\n";
         std::cout<<"1: Visualizar todos os produtos;\n";
         std::cout<<"2: Visualizar todos os produtos ordenados do menor para o maior preço;\n";
@@ -189,13 +198,9 @@ if(aux_cadastro=="NÃO")
         std::cout<<"4: Adicionar ao carrinho;\n";
         std::cout<<"5: Finalizar compra;\n";
         std::cout<<"6: Sair do site;\n";
-
-        
- while(std::cin>>operacao_cliente)
- {
+        std::cin >> operacao_cliente;
      if(operacao_cliente<1 || operacao_cliente>6)
             {throw excecoes_operacoes();}
-     
         if(operacao_cliente==1)
         {
             estoque.imprimir_todos();
@@ -203,7 +208,6 @@ if(aux_cadastro=="NÃO")
         if(operacao_cliente==2)
         {
             estoque.ordena_preco();
-            estoque.imprimir_todos();
         }
         if(operacao_cliente==3)
         {
@@ -249,12 +253,12 @@ if(aux_cadastro=="NÃO")
             unsigned int quantidade;
             std::cout<<"Digite o codigo do produto que gostaria de adicionar ao carrinho.\n";
             std::cin>>codigo_lido;
-            std::cout<<"Quantos gostaria de adicionar ao carrinho?";
+            std::cout<<"Quantos gostaria de adicionar ao carrinho?\n";
             std::cin>>quantidade;
             
            
             Produto p=estoque.find_codigo(codigo_lido);
-            pedido_cliente.adicionar_carrinho(p,quantidade)
+            pedido_cliente.adicionar_produto(p,quantidade);
             
             
 
@@ -281,12 +285,12 @@ if(aux_cadastro=="NÃO")
                 return 0;
 
         }
-        if(operacao_cliente=6)
+        if(operacao_cliente==6){
         return 0;
-
-    
+        }
+        std::cout<<"Deseja executar mais alguma ação? Se sim, tecle 1, caso contrário tecle 0"<<std::endl;
+                std::cin>>count;
     }
-
-}
+    return 0;
 }
 };
