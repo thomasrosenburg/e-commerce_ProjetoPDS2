@@ -1,5 +1,5 @@
-#include "cliente.h"
-#include "endereco.h"
+#include "../include/cliente.h"
+#include "../include/endereco.h"
 #include <iostream>
 
 Cliente::Cliente(
