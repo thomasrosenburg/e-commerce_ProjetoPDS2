@@ -1,4 +1,4 @@
-#include "estoque.h"
+#include "../include/estoque.h"
 #include <string.h>
 
 void Estoque::adiciona_produto(Produto prod_novo)
@@ -39,6 +39,7 @@ void Estoque::imprimir_todos()
     for (auto it = lista_produtos.begin(); it != lista_produtos.end(); it++)
     {
         (*it).imprimir_produto();
+        std::cout << std::endl;
     }
 }
 
@@ -125,9 +126,8 @@ Produto Estoque:: find_codigo(unsigned int codigo)
             return (*it);
         }
     }
-        else
-        { throw excecoes_codigo();
-        }
+}
+     throw excecoes_codigo();
 }
     
 bool Estoque:: confere_codigo(unsigned int codigo)
@@ -138,9 +138,8 @@ bool Estoque:: confere_codigo(unsigned int codigo)
         {
             return true;
         }
-        else
-        return false;
     }
+            return false;
 }
 
 void Estoque::inicializa_estoque()
