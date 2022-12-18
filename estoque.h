@@ -35,6 +35,7 @@ class Estoque
     void inicializa_estoque();
     //funcão criada para conferir se o código dado é válido
     bool confere_codigo(unsigned int codigo);
+    void retira_quant_no_estoque(int quant, Produto p);
 
 
 };
