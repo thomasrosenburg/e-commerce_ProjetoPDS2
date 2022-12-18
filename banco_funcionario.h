@@ -1,4 +1,4 @@
-#ifndef BANCO_FUNCINARIOS
+#ifndef BANCO_FUNCIONARIOS
 #define BANCO_FUNCIONARIOS 
 
 #include "funcionario.h"
