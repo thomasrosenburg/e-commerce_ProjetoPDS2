@@ -258,7 +258,7 @@ if(aux_cadastro=="NAO")
             
            
             Produto p=estoque.find_codigo(codigo_lido);
-            pedido_cliente.adicionar_produto(p,quantidade);
+            pedido_cliente.adicionar_produto(p,quantidade, estoque);
             
             
 
