@@ -67,7 +67,7 @@ void Estoque::exibir_blusa()
     for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
     {
         
-        if((*it).get_tipo()==0)
+        if((*it).get_tipo()==1)
         {
             (*it).imprimir_produto();
         }
@@ -77,7 +77,7 @@ void Estoque::exibir_calca()
 { 
     for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
     {
-    if((*it).get_tipo()==1)
+    if((*it).get_tipo()==2)
         {
             (*it).imprimir_produto();
         }
@@ -88,7 +88,7 @@ void Estoque:: exibir_sapatos()
 {
     for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
     {
-    if((*it).get_tipo()==2)
+    if((*it).get_tipo()==3)
         {
             (*it).imprimir_produto();
         }
@@ -99,7 +99,7 @@ void Estoque:: exibir_shorts()
 {
 for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
 {
-if((*it).get_tipo()==3)
+if((*it).get_tipo()==4)
         {
             (*it).imprimir_produto();
         }
@@ -108,7 +108,7 @@ if((*it).get_tipo()==3)
 void Estoque:: exibir_vestidos()
 { for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
 {
-if((*it).get_tipo()==4)
+if((*it).get_tipo()==5)
         {
             (*it).imprimir_produto();
         }
