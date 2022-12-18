@@ -1,4 +1,4 @@
-#include "usuario.h"
+#include "../include/usuario.h"
 #include <string>
 
 Usuario::Usuario(std::string nome, 
