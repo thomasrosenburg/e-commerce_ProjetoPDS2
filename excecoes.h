@@ -21,4 +21,9 @@ class excecoes_codigo : public exception
     public:
     virtual const char* what() const noexcept override;
 };
+class excecoes_categoria : public exception
+{
+    public:
+    virtual const char* what() const noexcept override;
+};
 #endif
