@@ -1,23 +1,24 @@
 #include "../include/pedido.h"
 #include <iostream>
+#include <iomanip>
 
 /* função responsável por adicionar os produtos que o cliente deseja*/
 
-void Pedido::adicionar_produto(Produto p, int quant, Estoque estoque)
+void Pedido::adicionar_produto(Produto p, int quant)
 {
 
-    if(quant<=p.get_quantidade())
+    if(quant<=p._quantidade)
     {
-        estoque.altera_quant_no_estoque(quant,p);
+
         for(int i=0; i<quant; i++)
         {
             _produtos_pedidos.push_back(p);
         }
     }
-    else 
-    {
-        std::cout<< "A quantidade selecionada para esse produto está indisponível."<<std:: endl;
-    } 
+    else
+     {
+        throw excecoes_quantidade();
+    }
 
 } 
 
@@ -32,15 +33,17 @@ void Pedido::adicionar_cliente( Cliente cliente)
 //TA COM ERRO
 void Pedido::imprimir_carrinho()
 {
-    std::cout<<"Cliente:"<<std::endl;
-    //imprimir cliente
-    _cliente.imprime_cliente();
-
     std::cout<<"Pedido:"<<std::endl;
     //imprimir pedido
    for(auto it= _produtos_pedidos.begin(); it!= _produtos_pedidos.end(); it++)
 {
-    (*it).imprimir_produto();
+    std:: cout<<(*it).get_modelo()<< ", "
+    <<(*it).get_cor()<<", "
+    <<(*it).get_tamanho()<<", "
+    <<std::fixed
+    <<std::setprecision(2)
+    <<" R$"
+    <<(*it)._preco << std::endl;
 } 
 } 
 
