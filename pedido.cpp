@@ -6,7 +6,8 @@
 
 void Pedido::adicionar_produto(Produto p, int quant)
 {
-
+if(quant<0)
+throw excecoes_quantidade();
     if(quant<=p._quantidade)
     {
 
