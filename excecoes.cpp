@@ -9,13 +9,17 @@ const char* excecoes_login_cliente:: what() const noexcept
 }
 const char* excecoes_operacoes:: what() const noexcept
 {
-    return "operacao invalida";
+    return "operacao invalida!";
 }
 const char* excecoes_codigo:: what() const noexcept
 {
-    return "produto não encontrado";
+    return "produto não encontrado!";
 }
 const char* excecoes_categoria:: what() const noexcept
 {
-    return "operacao invalida";
+    return "operacao invalida!";
+}
+const char* excecoes_quantidade:: what() const noexcept
+{
+    return "quantidade inválida!";
 }
