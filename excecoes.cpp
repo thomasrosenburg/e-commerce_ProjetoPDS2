@@ -15,3 +15,7 @@ const char* excecoes_codigo:: what() const noexcept
 {
     return "produto não encontrado";
 }
+const char* excecoes_categoria:: what() const noexcept
+{
+    return "operacao invalida";
+}
