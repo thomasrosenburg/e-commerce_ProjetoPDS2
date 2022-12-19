@@ -1,7 +1,7 @@
-#include "doctest.h"
-#include "pedido.h"
+#include "../third_party/doctest.h"
+#include "../include/pedido.h"
 //Rever testes
-/* TEST_CASE("Testa calcular total"){
+TEST_CASE("Testa calcular total"){
     Produto produto1 = Produto("Blusa nike", blusa, 1, 89.90, 1, "M", "Preto");
     Produto produto2 = Produto("Blusa adidas", blusa, 1, 109.90, 1, "M", "Preto");
     Cliente cliente = Cliente("Joseane", "jm1989", "jm@gmail.com", "31913121989",
@@ -18,7 +18,7 @@ TEST_CASE("Testa calcular frete"){
     Produto produto2 = Produto("Blusa adidas", blusa, 1, 109.90, 1, "M", "Preto");
     Cliente cliente = Cliente("Joseane", "jm1989", "jm@gmail.com", "31913121989",
                                "31710400", "Belo Horizonte", MG, 21, 113);
-    Pedido pedido = Pedido();
+    Pedido pedido;
     pedido.adicionar_cliente(cliente);
     pedido.adicionar_produto(produto1, 1);
     pedido.adicionar_produto(produto2, 1);
@@ -32,11 +32,11 @@ TEST_CASE("Testa selecionar pagamento"){
     Produto produto2 = Produto("Blusa adidas", blusa, 1, 109.90, 1, "M", "Preto");
     Cliente cliente = Cliente("Joseane", "jm1989", "jm@gmail.com", "31913121989",
                                "31710400", "Belo Horizonte", MG, 21, 113);
-    Pedido pedido = Pedido();
+    Pedido pedido;
     pedido.adicionar_produto(produto1, 1);
     pedido.adicionar_produto(produto2, 1);
     pedido.adicionar_cliente(cliente);
     std::string pagamento = pedido.selecionar_pagamento(cartao_credito);
     std::string comp_pagamento = "Você selecionou: Cartão de crédito.\n";
     CHECK_EQ(pagamento, comp_pagamento);
-} */
+}
