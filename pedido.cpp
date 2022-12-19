@@ -31,7 +31,7 @@ void Pedido::adicionar_cliente( Cliente cliente)
     cliente.set_email(cliente.get_email());
     cliente.set_endereco(cliente.get_endereco());
 } 
-//TA COM ERRO
+
 void Pedido::imprimir_carrinho()
 {
     std::cout<<"Pedido:"<<std::endl;
