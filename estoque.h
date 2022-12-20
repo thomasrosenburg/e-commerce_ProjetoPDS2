@@ -3,38 +3,55 @@
 
 #include <list>
 #include "produto.h"
-
+//@class Estoque
 class Estoque
 {
     private:
-    //lista de produtos que compõem o estoque da loja.
+    //@brief lista de produtos que compõem o estoque da loja.
     std::list<Produto> lista_produtos;
    
     public:
-     //essa função deverá ordenar e imprimir na tela os produtos do estoque na ordem crescente de preço.
+     //@brief ordena e imprime na tela os produtos do estoque na ordem crescente de preço.
     void ordena_preco(); 
-    //adiciona um novo produto ao estoque.
+    /** @brief adiciona um novo produto ao estoque.
+     * @param prod_novo Produto novo a ser adicionado.
+     */
     void adiciona_produto(Produto prod_novo);
-    //retira um produto do estoque, por exemplo se o próprio esgotar.
+    /** @brief retira um produto do estoque, por exemplo se o próprio esgotar.
+     * @param prod Produto a ser retirado
+     */
     void retira_produto(Produto prod);
-    // exibe apenas produtos do tipo blusa para o cliente.
+    //@brief exibe apenas produtos do tipo blusa para o cliente.
     void exibir_blusa();
-    // exibe apenas produtos do tipo short para o cliente.
+    // @brief exibe apenas produtos do tipo short para o cliente.
     void exibir_shorts();
-    // exibe apenas produtos do tipo sapato para o cliente.
+    // @brief exibe apenas produtos do tipo sapato para o cliente.
     void exibir_sapatos();
-    // exibe apenas produtos do tipo vestido para o cliente.
+    // @brief exibe apenas produtos do tipo vestido para o cliente.
     void exibir_vestidos();
-    // exibe apenas produtos do tipo calça para o cliente.
+    // @brief exibe apenas produtos do tipo calça para o cliente.
     void exibir_calca();
-    //imprime na tela todos os produtos presentes no estoque
+    //@brief imprime na tela todos os produtos presentes no estoque
     void imprimir_todos();
-    //função criada para encontrar um produto no estoque, pelo seu codigo
+    /**
+    *@brief função criada para encontrar um produto no estoque, pelo seu codigo.
+    *@param codigo Codigo do produto.
+    */
     Produto find_codigo(unsigned int codigo);
-    //função criada para simular um banco de dados
+    //@brief função criada para simular um banco de dados
     void inicializa_estoque();
-    //funcão criada para conferir se o código dado é válido
+    /**
+    *@brief  confere se o código dado é válido
+    *@param codigo Codigo do produto conferido
+    *@return true Retorna verdadeiro caso o código seja correspondido a um produto
+    *@return false Retorna falso caso o código não corresponda a um produto
+    */
     bool confere_codigo(unsigned int codigo);
+    /**
+    *@brief retira uma quantidade do produto no estoque
+    *@param quant Quantidade do produto
+    *@param p Produto
+    */
     void retira_quant_no_estoque(int quant, Produto p);
 
 
