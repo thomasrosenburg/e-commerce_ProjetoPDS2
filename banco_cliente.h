@@ -14,13 +14,22 @@ class Banco_Cliente: public Banco_Dados
     std::list<Cliente> _banco_cliente;
 
     public:
-    //função que simula um banco de clientes registrados no site
+    /* @brief função que simula um banco de clientes registrados no site
+    */
     virtual void inicializa() override;
-    //adiciona cliente ao registro do site
+    /* @brief adiciona cliente ao registro do site
+     * @param o Cliente cliente a ser adicionado
+     */
     void adiciona_cliente(Cliente cliente);
-    //caso o cliente esteja registrado no site, ele é retornado
+    /* @brief caso o cliente esteja registrado no site, ele é retornado
+     * @param string login do cliente
+     */
     Cliente retorna_cliente(std::string login);
-    //caso o cliente esteja no cadastro, essa função retorna verdadeiro
+    /* @brief confere se o cliente esta ou nao ja registrado
+     * @param string login do cliente testado
+     * @return true retorna verdadeiro caso o login seja encontrado no banco de dados
+     * @return false retorna verdadeiro caso o login nao seja encontrado no banco de dados
+     */
     virtual bool confere_login(std::string login) override;
 
 
