@@ -14,10 +14,10 @@ std::string cor):
 _modelo(modelo),
 _tipo(tipo), 
 _codigo(codigo),
-_quantidade(quantidade),
 _tamanho(tamanho), 
 _cor(cor),
-_preco(preco)
+_preco(preco),
+_quantidade(quantidade)
 {
 
 };
@@ -31,10 +31,6 @@ Tipo Produto::get_tipo()
     return _tipo;
 };
 
-int Produto::get_quantidade()
-{
-    return _quantidade;
-};
 unsigned int Produto::get_codigo()
 {
     return _codigo;
@@ -49,6 +45,7 @@ std:: string Produto::get_cor()
     return _cor;
 }
 
+
 void Produto:: imprimir_produto()
 {
 
@@ -60,7 +57,8 @@ void Produto:: imprimir_produto()
     <<std::fixed
     <<std::setprecision(2)
     <<_quantidade<<" unidades, R$"
-    <<_preco;
+    <<_preco << std::endl;
+
 }
 std::string Produto:: conversao_tipo_string(Tipo tipo)
 {
@@ -69,23 +67,24 @@ std::string Produto:: conversao_tipo_string(Tipo tipo)
         return "Blusa";
     
     }
-    if(tipo==2)
+   else if(tipo==2)
     {
         return "Calça";
     }
-    if(tipo==3)
+   else if(tipo==3)
     {
         return "Sapato";
     }
-    if(tipo==4)
+   else if(tipo==4)
     {
         return "Shorts";
     }
-    if(tipo==5)
+   else if(tipo==5)
     {
         return "Vestido";
     }
-        return "Erro";//trocar por excecção
+    else
+    throw excecoes_conversao_string();
 }
 
 Tipo Produto::conversao_string_tipo(std:: string tipo)
@@ -94,21 +93,22 @@ Tipo Produto::conversao_string_tipo(std:: string tipo)
     {
         return blusa;
     }
-    if(tipo=="Calça")
+   else if(tipo=="Calça")
     {
         return calca;
     }
-    if(tipo=="Sapato")
+   else if(tipo=="Sapato")
     {
         return sapato;
     }
-    if(tipo=="Shorts")
+   else if(tipo=="Shorts")
     {
         return shorts;
     }
-    if(tipo=="Vestido")
+   else if(tipo=="Vestido")
     {
         return vestido;
     }
-        return vestido;//trocar por excecção
+     else
+     throw excecoes_conversao_string();
 }
