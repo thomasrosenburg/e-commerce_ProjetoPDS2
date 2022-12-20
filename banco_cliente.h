@@ -43,7 +43,7 @@ class Banco_Cliente: public Banco_Dados
      * @param string login do cliente testado.
      * @return false retorna verdadeiro caso o login nao seja encontrado no banco de dados
      */
-    virtual bool confere_login(std::string login) override;
+     virtual bool confere_login(std::string login) override;
 
 
 };
