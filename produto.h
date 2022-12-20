@@ -3,52 +3,102 @@
 
 #include "excecoes.h"
 #include <string>
-//tipos de produtos presentes no site.
+
+
+
+/** @enum Tipo
+ * @brief Tipo enum, corresponde aos tipos de roupa que o site contém
+ */
 enum Tipo
 {
-    blusa=1, 
-    calca, 
-    sapato,
-    shorts,
-    vestido
+    blusa=1, ///< Tipo::blusa
+    calca, ///<   Tipo::calca
+    sapato, ///<  Tipo::sapato
+    shorts, ///<  Tipo::shorts
+    vestido ///<  Tipo::vestido
 
 };
-
+/**
+ * @class Produto
+ *
+ * @brief Esta classe é responsável por criar o objeto produto
+ * e introduzir as funções relativas a essa classe.
+ */
 class Produto
 {
     //declara as características de um produto.
     private:
 
-    std::string _modelo;
-    Tipo _tipo;
-    unsigned int _codigo; 
-    int _quantidade;
-    std::string _tamanho;
-    std:: string _cor;
+    std::string _modelo; ///< modelo do produto.
+    Tipo _tipo; ///< O tipo do produto.
+    unsigned int _codigo; ///< O código do produto. Essa variável é única para cada objeto.
+    int _quantidade; ///< Quantidade do produto.
+    std::string _tamanho; ///< O tamnanho do produto.
+    std:: string _cor; ///< A cor do produto;
     
-    //declara os métodos que podem ser feitos com o TAD.
+
     public:
-    //declara a variável preço do produto.
+      /**
+   * @brief Preço do produto.
+   */
     double _preco;
-    //constrói um produto
+    /**
+   * @brief Construtor padrao que inicializa todas as variaveis da classe.
+   *
+   * @param modelo.
+   * @param tipo.
+   * @param _codigo.
+   * @param preco.
+   * @param quantidade.
+   * @param tamanho.
+   * @param cor
+   */
     Produto(std::string modelo,Tipo tipo,unsigned int _codigo, double preco, int quantidade, std::string tamanho, std::string cor);
-    //acessa a variável modelo do produto.
+   /**
+   * @brief  Responsavel por acessar a variável modelo do produto.
+   * @return std:: string Retorna o modelo do produto.
+   */
     std:: string get_modelo();
-    //acessa a variável tipo do produto.
+   /**
+   * @brief  Responsavel por acessar a variável tipo do produto.
+   * @return Tipo Retorna o tipo do produto.
+   */
     Tipo get_tipo();
-    //acessa a variável codigo do produto.
+   /**
+   * @brief  Responsavel por acessar a variável código do produto.
+   * @return unsigned int Retorna o código do produto.
+   */
     unsigned int get_codigo();
-    //acessa a variável quantidade do produto.
+   /**
+   * @brief  Responsavel por acessar a variável quantidade do produto.
+   * @return int  Retorna a quantidade do produto.
+   */
     int get_quantidade();
-    //acessa a variável tamanho do produto.
+    /**
+   * @brief  Responsavel por acessar a variável tamanho do produto.
+   * @return std:: string Retorna o tamanho do produto.
+   */
     std::string get_tamanho();
-    //acessa a variável cor do produto.
+    /**
+   * @brief  Responsavel por acessar a variável cor do produto.
+   * @return std:: string Retorna a cor do produto.
+   */
     std:: string get_cor();
-    //imprime na tela as informações do produto na tela.
+   /**
+   * @brief  Responsavel por imprimir na tela as informações do produto na tela.
+   */
     void imprimir_produto();
-    //converte uma variavel Tipo para uma string.
+    /**
+    * @brief  Responsavel por converter uma variavel Tipo para uma string.
+    * @param tipo Tipo que queremos converter para string.
+    * @return std::string Retorna a string correspondente a aquele tipo
+    */
     std::string conversao_tipo_string(Tipo tipo);
-    //converte uma variavel String para um Tipo.
+    /**
+    * @brief  Responsavel por converter uma variavel string para uma variavel Tipo.
+    * @param tipo std::string que queremos converter para Tipo.
+    * @return Tipo Retorna o Tipo correspondente a aquele tipo
+    */
     Tipo conversao_string_tipo(std::string tipo);
 
 
