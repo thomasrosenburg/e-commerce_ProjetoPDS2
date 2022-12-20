@@ -30,7 +30,7 @@ Cliente Banco_Cliente::retorna_cliente(std:: string login)
         throw excecoes_login_cliente();
      
     }
-void Banco_Cliente:: Inicializa_Clientes()
+void Banco_Cliente:: inicializa()
 {
     adiciona_cliente(Cliente("Raquel", "raquellacerda", "raquellacerda@gmail.com", "9961-3850", "30140111", "Belo Horizonte", Estado::MG, 799, 1701));
     adiciona_cliente(Cliente("Marcos", "marcoscunha", "marcoscunha@gmail.com", "8776-7899", "56771223", "Recife", Estado::PE, 146, 801));
