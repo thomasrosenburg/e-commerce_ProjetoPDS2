@@ -27,3 +27,7 @@ const char* excecoes_conversao_string:: what() const noexcept
 {
     return "tipo inválido!";
 }
+const char* excecoes_conversao_estado:: what() const noexcept
+{
+    return "estado inválido!";
+}
