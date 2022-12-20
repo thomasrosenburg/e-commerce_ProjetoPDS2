@@ -4,29 +4,41 @@
 #include <string>
 //caracteriza o tipo de usuário, para futuramente filtrar as funções que este pode executar no site.
 enum Acesso{AMPLO, RESTRITO};
-
+//@class Usuario
 class Usuario{
     //declara as informações privadas do usuário.
     private:
-    
+    ///< Nome do usuario
      std:: string _nome;
+    ///< login do usuario
      std:: string _login;
     //métodos que o usúario tem.
     public:
-    //constrói um usuário. 
+    /**
+    *@brief constroi um usuario
+    *@param _nome Nome do usuario
+    *@param _login Login do usuario
+    */
     Usuario(
         std::string _nome,
         std:: string _login
         );
-    //acessa o nome do usuário.
+    //@brief acessa o nome do usuário.
     std:: string get_nome();
-    //acessa o login do usuário.
+    //@brief acessa o login do usuário.
     std:: string get_login();
-    //determina o tipo de acesso que o usuáiro tem no site.
+    //*@brief determina o tipo de acesso que o usuáiro tem no site.
+    //* Este metodo deve ser implementado pela classe concreta.
     virtual Acesso acesso_site()=0;
-    //registra um nome para o usuário.
+    /**
+    *@brief registra um nome para o usuário.
+    *@param nome Nome do usuario.
+    */
      void set_nome(std:: string nome);
-    //registra um login para o usuário.
+    /**
+    * @brief registra um login para o usuário.
+    * @param login Login do usuario
+    */
      void set_login(std:: string login);
 };
 
