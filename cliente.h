@@ -3,18 +3,24 @@
 
 #include "endereco.h"
 #include "usuario.h"
-//subclasse da classe Usuario
+/**
+ * @class Cliente
+ *
+ * @brief Esta classe é uma subclasse de Usuario e é responsável por criar o objeto cliente
+ * e introduzir as funções relativas a essa classe.
+ */
 class Cliente:public Usuario
-{   /*declaração das informações privadas do cliente
-    note que o nome e o login foram herdados da classe Usuario.
-*/
+{  
     private:
-    std::string _email;
-    Endereco _endereco; 
-    std::string _celular;
-    //declara os métodos relacionados a classe cliente.
+    std::string _email; ///< O email do cliente;
+    Endereco _endereco; ///< O endereço do cliente; 
+    std::string _celular; ///< O celular do cliente
+
     public:
-    //constrói um cliente
+     /**
+     * @brief Contrutor padrao que inicializa todas as variaveis privadas da
+     * classe.
+     */
     Cliente(std:: string nome, 
      std:: string login, 
      std::string email, 
@@ -24,22 +30,49 @@ class Cliente:public Usuario
     Estado estado,
     unsigned int numero,
     unsigned int complemento);
+    
+     /**
+     * @brief Contrutor default que inicializa o cliente.
+     */
     Cliente();
-    //determina o acesso do cliente ao site 
+      /**
+     * @brief Responsável por determinar o acesso do cliente ao site.
+     * @return Acesso Retorna o tipo de acesso que o cliente tem.
+     */
     virtual Acesso acesso_site() override;
-    //acessa a variável celular do cliente.
+     /**
+     * @brief Responsável por acessar a variável celular do cliente.
+     * @return std::string Retorna o celular.
+     */
     std::string get_celular();
-    //acessa a variável e-mail do cliente.
+     /**
+     * @brief Responsável por acessar a variavel email do cliente.
+     * @return std::string Retorna o email.
+     */
     std:: string get_email();
-    //acessa a variável endereco do cliente.
+     /**
+     * @brief Responsável por acessar a variável endereço do cliente.
+     * @return Endeeco Retorna o endereço.
+     */
     Endereco get_endereco();
-    //imprime na tela as informações atreladas ao cliente.
+    /**
+    * @brief Responsável por  imprimir na tela as informações relacionadas ao cliente.
+    */
     void imprime_cliente();
-    //registra um e-mail para o cliente no site.
+     /**
+     * @brief Responsável por registrar um e-mail para o cliente no site.
+     * @param email Email que será implementado ao cliente.
+     */
     void set_email(std::string email);
-    //registra um celular para o cliente no site.
+     /**
+     * @brief Responsável por registrar um celular para o cliente no site.
+     * @param cel Celular que será implementado ao cliente.
+     */
     void set_celular(std::string cel);
-    //registra um endereco para o cliente no site.
+     /**
+     * @brief Responsável por registrar um endereco para o cliente no site.
+     * @param end Endereco que será implementado ao cliente.
+     */
     void set_endereco(Endereco end);
   
   
