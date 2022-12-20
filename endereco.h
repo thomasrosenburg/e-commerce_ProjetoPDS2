@@ -42,6 +42,7 @@ class Endereco{
     unsigned int get_numero();
     //acessa a variável complemento do endereço.
     unsigned int get_complemento();
+    Estado converte_string_estado(std::string estado);
 };
 
 #endif 
