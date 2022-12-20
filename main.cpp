@@ -22,10 +22,10 @@ int main()
     estoque.inicializa_estoque();
     
     Banco_Funcionario banco_funcionario;
-    banco_funcionario.inicializa_funcionarios();
+    banco_funcionario.inicializa();
 
     Banco_Cliente banco_cliente;
-    banco_cliente.Inicializa_Clientes();
+    banco_cliente.inicializa();
     
 
     std::cout<<"BEM VINDO AO NOSSO SITE\n";
@@ -40,7 +40,7 @@ int main()
         std::cin>>aux_login;
         /* caso o login seja igual a de um funcionário do banco de dados ele possuirá acesso 
         a determinadas funções especificas*/
-        if(banco_funcionario.encontra_funcionario(aux_login)==true)
+        if(banco_funcionario.confere_login(aux_login)==true)
         {
             std::string modelo;
             unsigned int tipo;
@@ -115,7 +115,7 @@ int main()
         }
 
     /* caso nao estiver no banco de dados significa que é cliente*/
-    if((banco_funcionario.encontra_funcionario(aux_login)==false))
+    if((banco_funcionario.confere_login(aux_login)==false))
     {
         usuario_site=banco_cliente.retorna_cliente(aux_login);
         auxiliar_funcao=1;
