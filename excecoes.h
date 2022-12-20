@@ -31,4 +31,9 @@ class excecoes_quantidade : public exception
     public:
     virtual const char* what() const noexcept override;
 };
+class excecoes_conversao_string : public exception
+{
+    public:
+    virtual const char* what() const noexcept override;
+};
 #endif
