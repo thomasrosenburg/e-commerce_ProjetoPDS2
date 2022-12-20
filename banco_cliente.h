@@ -6,7 +6,7 @@
 
 #include <string>
 #include <list>
-
+//@class Banco_Cliente
 class Banco_Cliente: public Banco_Dados
 {
     private:
