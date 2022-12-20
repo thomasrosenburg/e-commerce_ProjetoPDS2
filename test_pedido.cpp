@@ -40,3 +40,12 @@ TEST_CASE("Testa selecionar pagamento"){
     std::string comp_pagamento = "Você selecionou: Cartão de crédito.\n";
     CHECK_EQ(pagamento, comp_pagamento);
 }
+
+TEST_CASE("Testa exceção quantidade"){
+    Produto produto1 = Produto("Blusa nike", blusa, 1, 89.90, 1, "M", "Preto");
+    Cliente cliente = Cliente("Joseane", "jm1989", "jm@gmail.com", "31913121989",
+                               "31710400", "Belo Horizonte", MG, 21, 113);
+    Pedido pedido;
+    CHECK_THROWS_WITH(pedido.adicionar_produto(produto1, -1), "quantidade inválida!");
+    CHECK_THROWS_WITH(pedido.adicionar_produto(produto1, 4), "quantidade inválida!");
+}
