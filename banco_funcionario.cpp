@@ -6,7 +6,7 @@ void Banco_Funcionario::adiciona_funcionario(std:: string nome, std:: string log
     _banco_funcionarios.push_front(p);
 }
 
-bool Banco_Funcionario::encontra_funcionario(std:: string login)
+bool Banco_Funcionario::confere_login(std:: string login)
 {
     for(auto it=_banco_funcionarios.begin(); it!=_banco_funcionarios.end(); it++)
     {
@@ -18,7 +18,7 @@ bool Banco_Funcionario::encontra_funcionario(std:: string login)
     return false;
 }
 
-void Banco_Funcionario:: inicializa_funcionarios()
+void Banco_Funcionario:: inicializa()
 {
     adiciona_funcionario("Alice", "alicel", 20221);
     adiciona_funcionario("Thomas", "thomasr", 20222);
