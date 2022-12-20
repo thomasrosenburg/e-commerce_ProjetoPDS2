@@ -168,8 +168,10 @@ if(aux_cadastro=="NAO")
         std::cout<<"Celular:\n";
         std::cout<<celular;
         
-    banco_cliente.adiciona_cliente(Cliente(nome,login,email,celular,CEP,cidade,(Estado)estado,numero,complemento));
-    usuario_site=Cliente(nome,login,email,celular,CEP,cidade,(Estado)estado,numero,complemento);
+    std:: string estado_lido=usuario_site.converte_string_estado(estado);
+    usuario_site=Cliente(nome,login,email,celular,CEP,cidade,estado_lido,numero,complemento);
+    banco_cliente.adiciona_cliente(usuario_site);
+
 
     std::cout<<"Cadastro realizado com sucesso!\n";
     auxiliar_funcao=1;
