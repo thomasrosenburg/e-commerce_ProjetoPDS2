@@ -23,3 +23,7 @@ const char* excecoes_quantidade:: what() const noexcept
 {
     return "quantidade inválida!";
 }
+const char* excecoes_conversao_string:: what() const noexcept
+{
+    return "tipo inválido!";
+}
