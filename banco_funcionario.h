@@ -2,13 +2,14 @@
 #define BANCO_FUNCIONARIOS 
 
 #include "funcionario.h"
+#include "banco_dados.h"
 #include <string>
 #include <string.h>
 #include <list>
 #include <iostream>
 
 
-class Banco_Funcionario
+class Banco_Funcionario: public Banco_Dados
 {
     private:
 
@@ -16,8 +17,8 @@ class Banco_Funcionario
     
     public:
     void adiciona_funcionario(std:: string nome, std:: string login, unsigned int registro);
-    bool encontra_funcionario(std::string login); 
-    void inicializa_funcionarios();
+    virtual bool confere_login(std::string login) override; 
+    virtual void inicializa() override;
 
 
 };
