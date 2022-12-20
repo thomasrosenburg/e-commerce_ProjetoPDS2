@@ -1,21 +1,33 @@
-#include "estoque.h"
-#include "doctest.h"
+#include "../include/estoque.h"
+#include "../third_party/doctest.h"
 
-TEST_CASE("Testa estoque adicionar produto"){
+TEST_CASE("Testa estoque adiciona produto"){
    Estoque estoque;
-   Produto p = Produto("Blusa nike", blusa, 1, 89.90, 3, "M", "Preto");
-   CHECK_EQ(0, estoque.lista_produtos.size());//TEM QUE DEIXAR ESTOQUE PÚBLICO PARA TESTAR
-   estoque.adiciona_produto(p);
-   CHECK_EQ(1, estoque.lista_produtos.size());
+   Produto produto = Produto("Blusa nike", blusa, 1, 89.90, 1, "M", "Preto");
+   estoque.adiciona_produto(produto);
+   Produto auxiliar = estoque.find_codigo(1);
+   CHECK_EQ(auxiliar.get_tipo(), produto.get_tipo());
+   CHECK_EQ(auxiliar.get_modelo(), produto.get_modelo());
+   CHECK_EQ(auxiliar.get_tamanho(), produto.get_tamanho());
+   CHECK_EQ(auxiliar.get_codigo(), produto.get_codigo());
+   CHECK_EQ(auxiliar.get_cor(), produto.get_cor());
+   CHECK_EQ(auxiliar._quantidade, produto._quantidade);
+   CHECK_THROWS_WITH(estoque.find_codigo(13), "código inválido!");
 }
 
-TEST_CASE("Testa estoque retirar produto"){
+TEST_CASE("Testa estoque retira produto"){
    Estoque estoque;
-   Produto p = Produto("Blusa nike", blusa, 1, 89.90, 3, "M", "Preto");
-   CHECK_EQ(0, estoque.lista_produtos.size());
-   estoque.adiciona_produto(p);
-   CHECK_EQ(1, estoque.lista_produtos.size());
-   estoque.retira_produto(p);
-   CHECK_EQ(0, estoque.lista_produtos.size());
+   Produto produto = Produto("Blusa nike", blusa, 1, 89.90, 1, "M", "Preto");
+   estoque.adiciona_produto(produto);
+   Produto auxiliar = estoque.find_codigo(1);
+   CHECK_EQ(auxiliar.get_tipo(), produto.get_tipo());
+   CHECK_EQ(auxiliar.get_modelo(), produto.get_modelo());
+   CHECK_EQ(auxiliar.get_tamanho(), produto.get_tamanho());
+   CHECK_EQ(auxiliar.get_codigo(), produto.get_codigo());
+   CHECK_EQ(auxiliar.get_cor(), produto.get_cor());
+   CHECK_EQ(auxiliar._quantidade, produto._quantidade);
+   estoque.retira_produto(produto);
+   bool checar = estoque.confere_codigo(1);
+   CHECK_EQ(checar, false);
 }
 
