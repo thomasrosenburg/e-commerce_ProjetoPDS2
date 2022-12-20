@@ -28,7 +28,7 @@ class Endereco{
     public:
     /**
      *@brief constroi uma classe endereco
-     *@param cep CEP do endereco
+     *@param CEP CEP do endereco
      *@param cidade Cidade do endereco
      *@param estado Estado do endereco
      *@param numero Numero do endereco
