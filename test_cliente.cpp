@@ -1,9 +1,10 @@
 #include "../include/cliente.h"
 #include "../third_party/doctest.h"
 
-TEST_CASE("Testa Cliente Construtor"){
+TEST_CASE("Testa Cliente Construtor")
+{
     Cliente cliente = Cliente("Taylor", "ts1989", "ts@gmail.com", "31913121989",
-                               "31710400", "Belo Horizonte", MG, 21, 113);
+                              "31710400", "Belo Horizonte", MG, 21, 113);
     CHECK_EQ("Taylor", cliente.get_nome());
     CHECK_EQ("ts1989", cliente.get_login());
     CHECK_EQ("ts@gmail.com", cliente.get_email());
@@ -15,9 +16,10 @@ TEST_CASE("Testa Cliente Construtor"){
     CHECK_EQ(113, cliente.get_endereco().get_complemento());
 }
 //Testa o caso de alterações nos dados do cliente
-TEST_CASE("Testa Set Cliente"){
+TEST_CASE("Testa Set Cliente")
+{
     Cliente cliente = Cliente("Taylor", "ts1989", "ts@gmail.com", "31913121989",
-                               "31710400", "Belo Horizonte", MG, 21, 113);
+                              "31710400", "Belo Horizonte", MG, 21, 113);
     cliente.set_email("ts2022@gmail.com");
     cliente.set_celular("11984326441");
     Endereco end = Endereco("02860001", "Sao Paulo", SP, 5425, 524);
@@ -32,4 +34,4 @@ TEST_CASE("Testa Set Cliente"){
     CHECK_EQ(1, cliente.get_endereco().get_estado());
     CHECK_EQ(5425, cliente.get_endereco().get_numero());
     CHECK_EQ(524, cliente.get_endereco().get_complemento());
-} 
+}
