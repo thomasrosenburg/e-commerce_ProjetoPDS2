@@ -7,9 +7,9 @@
  */
 enum Acesso{AMPLO, RESTRITO};
 /**
- * @class Produto
+ * @class Usuario
  *
- * @brief Esta classe é responsável por criar o objeto produto
+ * @brief Esta classe é responsável por criar o objeto usuario
  * e introduzir as funções relativas a essa classe.
  */
 class Usuario{
