@@ -6,30 +6,30 @@ void Banco_Cliente::adiciona_cliente(Cliente cliente)
 }
 bool Banco_Cliente::confere_login(std::string login)
 {
-     for(auto it=_banco_cliente.begin(); it!=_banco_cliente.end(); it++)
+    for(auto it=_banco_cliente.begin(); it!=_banco_cliente.end(); it++)
     {
         if((*it).get_login()==login)
-         return true;
+            return true;
     }
-         return false;
+    return false;
 }
 
 Cliente Banco_Cliente::retorna_cliente(std:: string login)
 {
     if(confere_login(login)==true)
     {
-    for(auto it=_banco_cliente.begin(); it!=_banco_cliente.end(); it++)
-    {
-        if((*it).get_login()==login)
-    {
-            return (*it);
+        for(auto it=_banco_cliente.begin(); it!=_banco_cliente.end(); it++)
+        {
+            if((*it).get_login()==login)
+            {
+                return (*it);
+            }
+
+        }
     }
-    
-    }
-    }
-        throw excecoes_login_cliente();
-     
-    }
+    throw excecoes_login_cliente();
+
+}
 void Banco_Cliente:: inicializa()
 {
     adiciona_cliente(Cliente("Raquel", "raquellacerda", "raquellacerda@gmail.com", "9961-3850", "30140111", "Belo Horizonte", Estado::MG, 799, 1701));
