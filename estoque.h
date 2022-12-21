@@ -75,9 +75,9 @@ class Estoque
     /**
     *@brief retira uma quantidade do produto no estoque
     *@param quant Quantidade do produto
-    *@param p Produto
+    *@param codigo Codigo do produto
     */
-    void retira_quant_no_estoque(int quant, Produto p);
+    void retira_quantidade_produto(int quant, unsigned int codigo);
     /**
     *@brief altera uma quantidade do produto no estoque
     *@param quant Quantidade do produto
