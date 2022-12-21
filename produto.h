@@ -32,7 +32,6 @@ class Produto
     std::string _modelo; ///< modelo do produto.
     Tipo _tipo; ///< O tipo do produto.
     unsigned int _codigo; ///< O código do produto. Essa variável é única para cada objeto.
-    int _quantidade; ///< Quantidade do produto.
     std::string _tamanho; ///< O tamnanho do produto.
     std:: string _cor; ///< A cor do produto;
     
@@ -42,6 +41,7 @@ class Produto
    * @brief Preço do produto.
    */
     double _preco;
+    int _quantidade
     /**
    * @brief Construtor padrao que inicializa todas as variaveis da classe.
    *
@@ -69,11 +69,6 @@ class Produto
    * @return unsigned int Retorna o código do produto.
    */
     unsigned int get_codigo();
-   /**
-   * @brief  Responsavel por acessar a variável quantidade do produto.
-   * @return int  Retorna a quantidade do produto.
-   */
-    int get_quantidade();
     /**
    * @brief  Responsavel por acessar a variável tamanho do produto.
    * @return std:: string Retorna o tamanho do produto.
@@ -84,6 +79,11 @@ class Produto
    * @return std:: string Retorna a cor do produto.
    */
     std:: string get_cor();
+     /**
+   * @brief  Altera o valor da variável quantidade do produto.
+   * @param quant Quantidade a ser alterada do produto
+   */
+    void alterar_quantidade(int quant);
    /**
    * @brief  Responsavel por imprimir na tela as informações do produto na tela.
    */
