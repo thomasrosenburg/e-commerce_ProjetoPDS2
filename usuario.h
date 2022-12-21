@@ -2,17 +2,24 @@
 #define USUARIO_H
 
 #include <string>
-//caracteriza o tipo de usuário, para futuramente filtrar as funções que este pode executar no site.
+/** @enum Acesso
+ * @brief Acesso enum, caracteriza o tipo de acesso, para futuramente filtrar as funções que este pode executar no site.
+ */
 enum Acesso{AMPLO, RESTRITO};
-//@class Usuario
+/**
+ * @class Produto
+ *
+ * @brief Esta classe é responsável por criar o objeto produto
+ * e introduzir as funções relativas a essa classe.
+ */
 class Usuario{
-    //declara as informações privadas do usuário.
+    
     private:
-    ///< Nome do usuario
-     std:: string _nome;
-    ///< login do usuario
-     std:: string _login;
-    //métodos que o usúario tem.
+  
+     std:: string _nome;///< Nome do usuario
+    
+     std:: string _login; ///< login do usuario
+  
     public:
     /**
     *@brief constroi um usuario
@@ -23,12 +30,20 @@ class Usuario{
         std::string _nome,
         std:: string _login
         );
-    //@brief acessa o nome do usuário.
+    /**
+    * @brief acessa o nome do usuário.
+    * @return std::string Retorna o nome.
+    */
     std:: string get_nome();
-    //@brief acessa o login do usuário.
+    /**
+    *@brief acessa o login do usuário.
+    *@return std::string Retorna login.
+    */
     std:: string get_login();
-    //*@brief determina o tipo de acesso que o usuáiro tem no site.
-    //* Este metodo deve ser implementado pela classe concreta.
+    /**
+    *@brief determina o tipo de acesso que o usuáiro tem no site.
+    * Este metodo deve ser implementado pela classe concreta.
+    */
     virtual Acesso acesso_site()=0;
     /**
     *@brief registra um nome para o usuário.
