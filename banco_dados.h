@@ -4,7 +4,7 @@
 #include <string>
 
 /**
-* @class Produto
+* @class Banco_Dados
 *
 * @brief Classe responsável por inicializar as funções que serão utilizadas no 
 * banco de dados dos clientes e dos funcionários.
