@@ -1,23 +1,25 @@
 #include "../third_party/doctest.h"
 #include "../include/pedido.h"
-
-TEST_CASE("Testa calcular total"){
+//Rever testes
+TEST_CASE("Testa calcular total")
+{
     Produto produto1 = Produto("Blusa nike", blusa, 1, 89.90, 1, "M", "Preto");
     Produto produto2 = Produto("Blusa adidas", blusa, 1, 109.90, 1, "M", "Preto");
     Cliente cliente = Cliente("Joseane", "jm1989", "jm@gmail.com", "31913121989",
-                               "31710400", "Belo Horizonte", MG, 21, 113);
+                              "31710400", "Belo Horizonte", MG, 21, 113);
     Pedido pedido;
     pedido.adicionar_produto(produto1, 1);
     pedido.adicionar_produto(produto2, 1);
     double total = pedido.calcular_total();
     CHECK_EQ(199.8, total);
-} 
+}
 
-TEST_CASE("Testa calcular frete"){
+TEST_CASE("Testa calcular frete")
+{
     Produto produto1 = Produto("Blusa nike", blusa, 1, 89.90, 1, "M", "Preto");
     Produto produto2 = Produto("Blusa adidas", blusa, 1, 109.90, 1, "M", "Preto");
     Cliente cliente = Cliente("Joseane", "jm1989", "jm@gmail.com", "31913121989",
-                               "31710400", "Belo Horizonte", MG, 21, 113);
+                              "31710400", "Belo Horizonte", MG, 21, 113);
     Pedido pedido;
     pedido.adicionar_cliente(cliente);
     pedido.adicionar_produto(produto1, 1);
@@ -27,11 +29,12 @@ TEST_CASE("Testa calcular frete"){
     CHECK_EQ(frete, comp_frete);
 }
 
-TEST_CASE("Testa selecionar pagamento"){
+TEST_CASE("Testa selecionar pagamento")
+{
     Produto produto1 = Produto("Blusa nike", blusa, 1, 89.90, 1, "M", "Preto");
     Produto produto2 = Produto("Blusa adidas", blusa, 1, 109.90, 1, "M", "Preto");
     Cliente cliente = Cliente("Joseane", "jm1989", "jm@gmail.com", "31913121989",
-                               "31710400", "Belo Horizonte", MG, 21, 113);
+                              "31710400", "Belo Horizonte", MG, 21, 113);
     Pedido pedido;
     pedido.adicionar_produto(produto1, 1);
     pedido.adicionar_produto(produto2, 1);
@@ -41,10 +44,11 @@ TEST_CASE("Testa selecionar pagamento"){
     CHECK_EQ(pagamento, comp_pagamento);
 }
 
-TEST_CASE("Testa exceção quantidade"){
+TEST_CASE("Testa exceção quantidade")
+{
     Produto produto1 = Produto("Blusa nike", blusa, 1, 89.90, 1, "M", "Preto");
     Cliente cliente = Cliente("Joseane", "jm1989", "jm@gmail.com", "31913121989",
-                               "31710400", "Belo Horizonte", MG, 21, 113);
+                              "31710400", "Belo Horizonte", MG, 21, 113);
     Pedido pedido;
     CHECK_THROWS_WITH(pedido.adicionar_produto(produto1, -1), "quantidade inválida!");
     CHECK_THROWS_WITH(pedido.adicionar_produto(produto1, 4), "quantidade inválida!");
