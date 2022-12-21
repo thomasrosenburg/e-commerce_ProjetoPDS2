@@ -1,5 +1,6 @@
 CC := g++
 SRCDIR := src
+TSTDIR := tests
 OBJDIR := build
 BINDIR := bin
 
