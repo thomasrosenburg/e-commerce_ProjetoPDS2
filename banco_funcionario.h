@@ -8,7 +8,7 @@
 #include <list>
 #include <iostream>
 /**
- * @class Banco_Funcionarios
+ * @class Banco_Funcionario
  *
  * @brief Esta classe é responsável por simular um banco de dados
  * de funcionarios e  introduzir as funções relativas a essa classe.
