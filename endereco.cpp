@@ -1,17 +1,18 @@
 #include "../include/endereco.h"
+#include "../include/excecoes.h"
 
 Endereco::Endereco(std::string CEP,
-    std::string cidade,
-    Estado estado,
-    unsigned int numero,
-    unsigned int complemento)
-    {
-        _CEP=CEP;
-        _cidade=cidade;
-        _estado=estado;
-        _numero=numero;
-        _complemento=complemento;
-    };
+                   std::string cidade,
+                   Estado estado,
+                   unsigned int numero,
+                   unsigned int complemento)
+{
+    _CEP=CEP;
+    _cidade=cidade;
+    _estado=estado;
+    _numero=numero;
+    _complemento=complemento;
+};
 
 std::string Endereco::get_CEP()
 {
@@ -73,7 +74,7 @@ Estado Endereco::converte_string_estado(std::string estado)
     }
     if(estado=="MT")
     {
-        
+
         return Estado::MT;
     }
     if(estado=="MS")
@@ -133,38 +134,41 @@ Estado Endereco::converte_string_estado(std::string estado)
     }
     if(estado=="AC")
     {
-        
+
         return Estado::AC;
     }
     if(estado=="RO")
     {
-        
+
         return Estado::RO;
     }
     if(estado=="AM")
     {
-        
+
         return Estado::AM;
     }
-        if(estado=="RR")
+    if(estado=="RR")
     {
-        
+
         return Estado::RR;
     }
-        if(estado=="PA")
+    if(estado=="PA")
     {
-        
+
         return Estado::PA;
     }
-        if(estado=="AP")
+    if(estado=="AP")
     {
-        
+
         return Estado::AP;
     }
-        if(estado=="TO")
+    if(estado=="TO")
     {
-        
+
         return Estado::TO;
     }
-    //retornar exceção
+    else
+    {
+        throw excecoes_conversao_estado();
+    }
 }
