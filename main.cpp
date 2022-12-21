@@ -393,7 +393,7 @@ quantidade:
             {
                 int forma_pagamento;
 
-                std::cout<<"O valor total dos produtos foi de: R$ "<<pedido_cliente.calcular_total()<<",00\n";
+                std::cout<<"O valor total dos produtos foi de: R$ "<<pedido_cliente.calcular_total()<<std::endl;
                 if(pedido_cliente.calcular_total() == 0.00)
                 {
                     return 0;
