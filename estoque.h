@@ -28,7 +28,7 @@ class Estoque
      */
     void adiciona_produto(Produto prod_novo);
     /** 
-     *@brief retira um produto do estoque, por exemplo se o próprio esgotar.
+     *@brief retira um produto do estoque.
      * @param prod Produto a ser retirado
      */
     void retira_produto(Produto prod);
