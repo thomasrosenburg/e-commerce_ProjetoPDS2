@@ -3,36 +3,21 @@
 
 void Estoque::adiciona_produto(Produto prod_novo)
 {
-    unsigned int chave= prod_novo.get_codigo();
-    int aux=0;
-    for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
-    {
-        if((*it).get_codigo()==chave)
-        {
-            (*it).alterar_quantidade(prod_novo.get_quantidade());
-            aux++;
-        }
-    }
-
-    if(aux==0)
-    {
-        lista_produtos.emplace_back(prod_novo);
-    }
-
-} 
+    lista_produtos.emplace_back(prod_novo);
+}
 
 
- void Estoque::retira_produto(Produto prod)
+void Estoque::retira_produto(Produto prod)
 {
     unsigned int chave= prod.get_codigo();
     for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
     {
         if(it->get_codigo()==chave)
-    { 
-        it = lista_produtos.erase((it));
+        {
+            it = lista_produtos.erase((it));
+        }
     }
-    }
-} 
+}
 
 void Estoque::imprimir_todos()
 {
@@ -48,36 +33,39 @@ void Estoque::imprimir_todos()
 void Estoque::ordena_preco()
 {
 
-   lista_produtos.sort([](const Produto &prod1, const Produto &prod2)
-        { 
-                if(prod1._preco==prod2._preco)
-                    { return prod1._preco<prod2._preco;}
+    lista_produtos.sort([](const Produto &prod1, const Produto &prod2)
+    {
+        if(prod1._preco==prod2._preco)
+        {
+            return prod1._preco<prod2._preco;
+        }
         return prod1._preco<prod2._preco;
-        });
-   
+    });
 
-   imprimir_todos();
 
-} 
+    imprimir_todos();
+
+}
 
 void Estoque::exibir_blusa()
 {
-    /*sabendo que a loja é composta apenas por blusa, calça, vestido, shorts, sapato, vamos classificar*/
+    /*sabendo que a loja é composta apenas por blusa, calça, vestido, shorts, sapato, vamos classificar como tipo 1 = blusa*/
 
     for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
     {
-        
+
         if((*it).get_tipo()==1)
         {
             (*it).imprimir_produto();
         }
     }
-} 
-void Estoque::exibir_calca()    
-{ 
+}
+void Estoque::exibir_calca()
+{
+    /*tipo 2 equivale a calças */
     for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
     {
-    if((*it).get_tipo()==2)
+        if((*it).get_tipo()==2)
         {
             (*it).imprimir_produto();
         }
@@ -86,9 +74,10 @@ void Estoque::exibir_calca()
 
 void Estoque:: exibir_sapatos()
 {
+    /*tipo 3 equivale a sapatos*/
     for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
     {
-    if((*it).get_tipo()==3)
+        if((*it).get_tipo()==3)
         {
             (*it).imprimir_produto();
         }
@@ -97,39 +86,42 @@ void Estoque:: exibir_sapatos()
 
 void Estoque:: exibir_shorts()
 {
-for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
-{
-if((*it).get_tipo()==4)
+    /*tipo 4 equivale a shorts*/
+    for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
+    {
+        if((*it).get_tipo()==4)
         {
             (*it).imprimir_produto();
         }
+    }
 }
-}     
 void Estoque:: exibir_vestidos()
-{ for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
 {
-if((*it).get_tipo()==5)
+    /*tipo 5 equivale a vestidos*/
+    for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
+    {
+        if((*it).get_tipo()==5)
         {
             (*it).imprimir_produto();
         }
+    }
 }
-} 
 
 Produto Estoque:: find_codigo(unsigned int codigo)
 {
     if(confere_codigo(codigo)==true)
-{
-    for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
     {
-        if((*it).get_codigo()==codigo)
+        for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
         {
-            return (*it);
+            if((*it).get_codigo()==codigo)
+            {
+                return (*it);
+            }
         }
     }
+    throw excecoes_codigo();
 }
-     throw excecoes_codigo();
-}
-    
+
 bool Estoque:: confere_codigo(unsigned int codigo)
 {
     for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
@@ -139,20 +131,44 @@ bool Estoque:: confere_codigo(unsigned int codigo)
             return true;
         }
     }
-            return false;
+    return false;
 }
 
-void Estoque::retira_quant_no_estoque(int quant, Produto p)
+void Estoque::retira_quantidade_produto(int quant, unsigned int codigo)
 {
-    for(auto it= lista_produtos.begin(); it!=lista_produtos.end(); it++)
+    for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
     {
-        if((*it).get_codigo()==p.get_codigo())
+        if((*it).get_codigo()==codigo)
         {
-            (*it).alterar_quantidade((-1)*quant);
+            if((*it)._quantidade - quant < 0)
+            {
+                std::cout<< "A quantidade selecionada para esse produto está indisponível."<<std:: endl;
+            }
+            if((*it)._quantidade - quant >= 0)
+            {
+                (*it)._quantidade = (*it)._quantidade  - quant;
+            }
         }
     }
 }
 
+void Estoque::alterar_quantidade_produto(int quant, unsigned int codigo)
+{
+    for(auto it=lista_produtos.begin(); it!=lista_produtos.end(); it++)
+    {
+        if((*it).get_codigo()==codigo)
+        {
+            if((*it)._quantidade  + quant >= 0)
+            {
+                (*it)._quantidade = (*it)._quantidade  + quant;
+            }
+            if((*it)._quantidade  + quant < 0)
+            {
+                (*it)._quantidade = 0;
+            }
+        }
+    }
+}
 
 void Estoque::inicializa_estoque()
 {
