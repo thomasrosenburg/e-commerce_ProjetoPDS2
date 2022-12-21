@@ -41,7 +41,7 @@ class Produto
    * @brief Preço do produto.
    */
     double _preco;
-    int _quantidade
+    int _quantidade;
     /**
    * @brief Construtor padrao que inicializa todas as variaveis da classe.
    *
