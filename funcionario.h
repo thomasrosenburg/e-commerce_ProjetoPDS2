@@ -2,14 +2,19 @@
 #define FUNCIONARIO_H
 
 #include "usuario.h"
-//@class Funcionario
+/**
+ * @class Funcionario
+ *
+ * @brief Esta classe é responsável por criar o objeto responsavel
+ * e introduzir as funções relativas a essa classe.
+ */
 class Funcionario: public Usuario{
     private:
-    ///< o registro do funcionario
-    unsigned int _registro;
+   
+    unsigned int _registro;  ///< o registro do funcionario.
     public:
     /**
-    * @brief constroi um funcionario
+    * @brief Construtor padrao de um funcionario
     * @param _nome Nome do funcionario
     * @param login Login do funcionario
     * @param _registro Registro do funcionario
