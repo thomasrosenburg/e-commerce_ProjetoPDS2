@@ -78,6 +78,7 @@ class Estoque
     *@param p Produto
     */
     void retira_quant_no_estoque(int quant, Produto p);
+    void alterar_quantidade_produto(int quant, unsigned int codigo);
 
 
 };
