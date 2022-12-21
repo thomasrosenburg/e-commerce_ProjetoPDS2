@@ -1,6 +1,6 @@
 #include "../third_party/doctest.h"
 #include "../include/pedido.h"
-//Rever testes
+
 TEST_CASE("Testa calcular total")
 {
     Produto produto1 = Produto("Blusa nike", blusa, 1, 89.90, 1, "M", "Preto");
