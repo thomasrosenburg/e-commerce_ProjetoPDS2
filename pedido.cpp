@@ -85,23 +85,23 @@ double Pedido::calcular_total()
 
 std::string Pedido:: selecionar_pagamento(Pagamento forma_selecionada)
 {
-    if(forma_selecionada==0)
+    if(forma_selecionada==1)
     {
         return "Você selecionou: Cartão de crédito.\n";
     }
-    if(forma_selecionada==1)
+    if(forma_selecionada==2)
     {
         return "Você selecionou: Cartão de débito\n";
     }
-    if(forma_selecionada==2)
+    if(forma_selecionada==3)
     {
         return "Você selecionou: Boleto\n";
     }
-    if(forma_selecionada==3)
+    if(forma_selecionada==4)
     {
         return "Você selecionou: Pix\n";
     }
-    if(forma_selecionada==4)
+    if(forma_selecionada==5)
     {
         return "Você selecionou: Transferência bancária\n";
     }
