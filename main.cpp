@@ -33,7 +33,7 @@ cadastro:
     std::cout<<"Já possui login no nosso site? SIM/NAO\n";
     try
     {
-        std:: cin >> aux_cadastro;;
+        std:: cin >> aux_cadastro;
         if(aux_cadastro != "SIM" && aux_cadastro != "NAO" )
         {
             throw excecoes_operacoes();
@@ -393,7 +393,7 @@ quantidade:
             {
                 int forma_pagamento;
 
-                std::cout<<"O valor total dos produtos foi de: R$ "<<pedido_cliente.calcular_total()<<std::endl;
+                std::cout<<"O valor total dos produtos foi de: R$ "<<pedido_cliente.calcular_total()<<",00\n";
                 if(pedido_cliente.calcular_total() == 0.00)
                 {
                     return 0;
@@ -421,7 +421,7 @@ pagamento:
                 }
 
 
-                pedido_cliente.selecionar_pagamento((Pagamento)forma_pagamento);
+                std::cout << pedido_cliente.selecionar_pagamento((Pagamento)forma_pagamento);
 
                 std::cout<<"Seu pedido foi realizado com sucesso! Muito obrigado!\n";
                 return 0;
