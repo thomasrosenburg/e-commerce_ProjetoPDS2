@@ -39,7 +39,7 @@ TEST_CASE("Testa selecionar pagamento")
     pedido.adicionar_produto(produto1, 1);
     pedido.adicionar_produto(produto2, 1);
     pedido.adicionar_cliente(cliente);
-    std::string pagamento = pedido.selecionar_pagamento(cartao_credito);
+    std::string pagamento = pedido.selecionar_pagamento((Pagamento)1);
     std::string comp_pagamento = "Você selecionou: Cartão de crédito.\n";
     CHECK_EQ(pagamento, comp_pagamento);
 }
