@@ -11,7 +11,7 @@
  * @brief Pagamento enum, corresponde aos tipos de pagamento disponível.
  */
 enum Pagamento{
-    cartao_credito, cartao_debito, boleto, pix, transferencia_bancaria
+    cartao_credito=1, cartao_debito, boleto, pix, transferencia_bancaria
 };
 /**
  * @class Pedido
